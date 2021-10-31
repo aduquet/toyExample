@@ -1,14 +1,31 @@
+import os
+import pathlib
 import unittest
+import pandas as pd
+from adapter import *
 from arrayCalculator import *
 
 class TestArryCalc(unittest.TestCase):
 
-    def settingArray(self, val1, val2, val3):
-        a = arrayCalculator()
-        a.sett(val1)
-        a.sett(val2)
-        a.sett(val3)
+    def saveState(self, df_main):
 
+        here_iam = str(pathlib.Path().absolute())
+        resultsPath = here_iam + '\\adapter.csv'
+        
+        if not os.path.exists(resultsPath):    
+            with open('adapter.csv', 'a', newline = '') as f:
+                df_main.to_csv(f, index = False, header = True)
+
+        else:
+            with open('adapter.csv', 'a', newline = '') as f:
+                df_main.to_csv(f, index = False, header = False)
+
+    def settingArray(self, val1, val2, val3):
+        
+        a = arrayCalculator()
+        a.sett(val1,val2, val3)
+        df_main = getState(self, a)
+        self.saveState(df_main)
         return a
 
     def testOne(self): 
@@ -52,6 +69,7 @@ class TestArryCalc(unittest.TestCase):
         # TC3c: AC.set([1,4,1]); assert_equal(2,AC.avg(arr))
         a = self.settingArray(1, 4, 1)
         self.assertEqual(2, a.avg())
+
 
 
 if __name__ == '__main__':
