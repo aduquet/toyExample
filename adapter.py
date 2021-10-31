@@ -1,13 +1,12 @@
 import pandas as pd
 
-from arrayCalculator import *
-
+from arrayCalculator_F1 import *
 
 def getState(self, a):
     global df_main
     df_main = pd.DataFrame()
-
-    methodsList = ['get', 'avg', 'first', 'last']
+  
+    methodsList = ['testID', 'instanceID', 'get', 'avg', 'first', 'last']
     #for k, v in arrayCalculator.__dict__.items():
     #    if "function" in str(v):
     #        methodsList.append(k)
@@ -18,7 +17,5 @@ def getState(self, a):
     df_main['avg'] = a.avg()
     df_main['first'] = a.first()
     df_main['last'] = a.last()
-
+    # print(df_main)
     return df_main
-
-

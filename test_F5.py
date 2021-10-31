@@ -3,7 +3,7 @@ import pathlib
 import unittest
 import pandas as pd
 from adapter import *
-from arrayCalculator import *
+from arrayCalculator_F5 import *
 
 class TestArryCalc(unittest.TestCase):
 
@@ -12,15 +12,15 @@ class TestArryCalc(unittest.TestCase):
         df_main['testID'] = tID
         df_main['instanceID'] = insID
         here_iam = str(pathlib.Path().absolute())
-        resultsPath = here_iam + '\\adapter.csv'
+        resultsPath = here_iam + '\\adapter_F5.csv'
         
         if not os.path.exists(resultsPath):    
-            with open('adapter.csv', 'a', newline = '') as f:
+            with open('adapter_F5.csv', 'a', newline = '') as f:
                 df_main = df_main.sort_values(by=['testID'], ascending=True)
                 df_main.to_csv(f, index = False, header = True)
 
         else:
-            with open('adapter.csv', 'a', newline = '') as f:
+            with open('adapter_F5.csv', 'a', newline = '') as f:
                 df_main = df_main.sort_values(by=['testID'], ascending=True)
                 df_main.to_csv(f, index = False, header = False)
 
@@ -73,7 +73,6 @@ class TestArryCalc(unittest.TestCase):
         # TC3c: AC.set([1,4,1]); assert_equal(2,AC.avg(arr))
         a = self.settingArray(1, 4, 1, 'TC3', 'TC3c')
         self.assertEqual(2, a.avg())
-
 
 
 
