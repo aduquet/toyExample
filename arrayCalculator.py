@@ -12,12 +12,14 @@ class arrayCalculator:
 
         self.arr = []
 
-    def sett(self, val):
+    def sett(self, val1, val2, val3):
 
-        self.arr.append(val)
-    
+        # self.arr.append(val1, val2, val3)
+        self.arr = [val1, val2, val3]
+
     def gett(self):
-        print(self.arr)
+        #print(self.arr)
+        return self.arr
     
     def avg(self):
 
