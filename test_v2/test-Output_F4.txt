@@ -1,0 +1,23 @@
+testOne_a1 (__main__.TestArryCalc) ... ok
+testOne_b1 (__main__.TestArryCalc) ... ok
+testOne_c1 (__main__.TestArryCalc) ... ok
+testTwo_a2 (__main__.TestArryCalc) ... ok
+testTwo_b2 (__main__.TestArryCalc) ... FAIL
+testTwo_c2 (__main__.TestArryCalc) ... ok
+testThree_a3 (__main__.TestArryCalc) ... ok
+testThree_b3 (__main__.TestArryCalc) ... ok
+testThree_c3 (__main__.TestArryCalc) ... ok
+
+
+======================================================================
+FAIL: testTwo_b2 (__main__.TestArryCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_F4.py", line 61, in testTwo_b2
+    self.assertEqual(3, b2.last())
+AssertionError: 3 != 1
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.050s
+
+FAILED (failures=1)

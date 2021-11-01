@@ -1,0 +1,29 @@
+testOne_a1 (__main__.TestArryCalc) ... ok
+testOne_b1 (__main__.TestArryCalc) ... ok
+testOne_c1 (__main__.TestArryCalc) ... ok
+testTwo_a2 (__main__.TestArryCalc) ... ok
+testTwo_b2 (__main__.TestArryCalc) ... ok
+testTwo_c2 (__main__.TestArryCalc) ... ok
+testThree_a3 (__main__.TestArryCalc) ... ok
+testThree_b3 (__main__.TestArryCalc) ... FAIL
+testThree_c3 (__main__.TestArryCalc) ... FAIL
+======================================================================
+FAIL: testThree_b3 (__main__.TestArryCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_F5.py", line 76, in testThree_b3
+    self.assertEqual(2, b3.avg())
+AssertionError: 2 != 1.6666666666666667
+
+======================================================================
+FAIL: testThree_c3 (__main__.TestArryCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_F5.py", line 81, in testThree_c3
+    self.assertEqual(2, c3.avg())
+AssertionError: 2 != 1.6666666666666667
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.085s
+
+FAILED (failures=2)

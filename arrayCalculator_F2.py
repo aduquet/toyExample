@@ -9,8 +9,9 @@ class arrayCalculator:
 
     def gett(self):
         '''F2: in get always print ‘0’ for the last element, i.e., x-x-0'''
-        self.arr[2] = 0
-        return self.arr
+        aux = self.arr
+        aux[2] = 0
+        return aux
     
     def avg(self):
 

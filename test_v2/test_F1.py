@@ -6,7 +6,7 @@ import pandas as pd
 from adapter import *
 sys.path.append("C://Users//duquet//Documents//GitHub//toyExample//")
 
-from arrayCalculator import *
+from arrayCalculator_F1 import *
 
 class TestArryCalc(unittest.TestCase):
 
@@ -15,15 +15,15 @@ class TestArryCalc(unittest.TestCase):
         df_main['testID'] = tID
         df_main['instanceID'] = insID
         here_iam = str(pathlib.Path().absolute())
-        resultsPath = here_iam + '\\adapter.csv'
+        resultsPath = here_iam + '\\adapter_F1.csv'
         
         if not os.path.exists(resultsPath):    
-            with open('adapter.csv', 'a', newline = '') as f:
+            with open('adapter_F1.csv', 'a', newline = '') as f:
                 df_main = df_main.sort_values(by=['testID'], ascending=True)
                 df_main.to_csv(f, index = False, header = True)
 
         else:
-            with open('adapter.csv', 'a', newline = '') as f:
+            with open('adapter_F1.csv', 'a', newline = '') as f:
                 df_main = df_main.sort_values(by=['testID'], ascending=True)
                 df_main.to_csv(f, index = False, header = False)
  
@@ -88,5 +88,5 @@ if __name__ == '__main__':
         suite = loader.loadTestsFromModule(sys.modules[__name__])
         unittest.TextTestRunner(out, verbosity = verbosity).run(suite)
   
-    with open('test-Output.txt', 'w') as f:
+    with open('test-Output_F1.txt', 'w') as f:
         main(f)
