@@ -1,8 +1,7 @@
 testOne (__main__.TestArryCalc) ... ok
-testThree (__main__.TestArryCalc) ... ok
 testTwo (__main__.TestArryCalc) ... ok
-
+testThree (__main__.TestArryCalc) ... ok
 ----------------------------------------------------------------------
-Ran 3 tests in 0.049s
+Ran 3 tests in 0.048s
 
 OK

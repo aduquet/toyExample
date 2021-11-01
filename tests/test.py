@@ -10,8 +10,6 @@ from arrayCalculator import *
 
 class TestArryCalc(unittest.TestCase):
 
-    
-
     def saveState(self, df_main, tID, insID):
 
         df_main['testID'] = tID

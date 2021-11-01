@@ -1,6 +1,6 @@
 testOne (__main__.TestArryCalc) ... ok
-testThree (__main__.TestArryCalc) ... FAIL
 testTwo (__main__.TestArryCalc) ... ok
+testThree (__main__.TestArryCalc) ... FAIL
 
 ======================================================================
 FAIL: testThree (__main__.TestArryCalc)
@@ -11,6 +11,6 @@ Traceback (most recent call last):
 AssertionError: 2 != 1.6666666666666667
 
 ----------------------------------------------------------------------
-Ran 3 tests in 0.049s
+Ran 3 tests in 0.050s
 
 FAILED (failures=1)

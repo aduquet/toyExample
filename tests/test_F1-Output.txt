@@ -1,14 +1,6 @@
 testOne (__main__.TestArryCalc) ... ok
-testThree (__main__.TestArryCalc) ... FAIL
 testTwo (__main__.TestArryCalc) ... FAIL
-
-======================================================================
-FAIL: testThree (__main__.TestArryCalc)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_F1.py", line 74, in testThree
-    self.assertEqual(2, b3.avg())
-AssertionError: 2 != 1.0
+testThree (__main__.TestArryCalc) ... FAIL
 
 ======================================================================
 FAIL: testTwo (__main__.TestArryCalc)
@@ -18,7 +10,15 @@ Traceback (most recent call last):
     self.assertEqual(3, b2.last())
 AssertionError: 3 != 0
 
+======================================================================
+FAIL: testThree (__main__.TestArryCalc)
 ----------------------------------------------------------------------
-Ran 3 tests in 0.048s
+Traceback (most recent call last):
+  File "test_F1.py", line 74, in testThree
+    self.assertEqual(2, b3.avg())
+AssertionError: 2 != 1.0
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.049s
 
 FAILED (failures=2)

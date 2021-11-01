@@ -5,8 +5,6 @@ import pandas as pd
 
 sys.path.append("C://Users//duquet//Documents//GitHub//toyExample//")
 
-from arrayCalculator_F1 import *
-
 def getState(self, a):
     
     global df_main
