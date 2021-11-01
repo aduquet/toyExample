@@ -1,15 +1,18 @@
+import os
+import sys
+import pathlib
 import pandas as pd
+
+sys.path.append("C://Users//duquet//Documents//GitHub//toyExample//")
 
 from arrayCalculator_F1 import *
 
 def getState(self, a):
+    
     global df_main
     df_main = pd.DataFrame()
   
     methodsList = ['testID', 'instanceID', 'get', 'avg', 'first', 'last']
-    #for k, v in arrayCalculator.__dict__.items():
-    #    if "function" in str(v):
-    #        methodsList.append(k)
 
     df_main = pd.DataFrame(columns=methodsList, index=None)
     

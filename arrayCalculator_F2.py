@@ -5,7 +5,6 @@ class arrayCalculator:
         self.arr = []
 
     def sett(self, val1, val2, val3):
-        # self.arr.append(val1, val2, val3)
         self.arr = [val1, val2, val3]
 
     def gett(self):

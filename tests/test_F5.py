@@ -3,7 +3,10 @@ import pathlib
 import unittest
 import pandas as pd
 from adapter import *
-from arrayCalculator_F1 import *
+import sys
+sys.path.append("C://Users//duquet//Documents//GitHub//toyExample//")
+
+from arrayCalculator_F5 import *
 
 class TestArryCalc(unittest.TestCase):
 
@@ -12,15 +15,15 @@ class TestArryCalc(unittest.TestCase):
         df_main['testID'] = tID
         df_main['instanceID'] = insID
         here_iam = str(pathlib.Path().absolute())
-        resultsPath = here_iam + '\\adapter_F1.csv'
+        resultsPath = here_iam + '\\adapter_F5.csv'
         
         if not os.path.exists(resultsPath):    
-            with open('adapter_F1.csv', 'a', newline = '') as f:
+            with open('adapter_F5.csv', 'a', newline = '') as f:
                 df_main = df_main.sort_values(by=['testID'], ascending=True)
                 df_main.to_csv(f, index = False, header = True)
 
         else:
-            with open('adapter_F1.csv', 'a', newline = '') as f:
+            with open('adapter_F5.csv', 'a', newline = '') as f:
                 df_main = df_main.sort_values(by=['testID'], ascending=True)
                 df_main.to_csv(f, index = False, header = False)
 
@@ -50,7 +53,7 @@ class TestArryCalc(unittest.TestCase):
         # TC2a: AC.set([0,0,0]); assert_equal(0,AC.last(arr)) – input [0,0,0]
         a2 = self.settingArray(0,0,0, 'TC2', 'TC2a')
         # TC2b: AC.set([1,2,3]); assert_equal(3,AC.last(arr))
-        b2 = self.settingArray(1,2,3, 'TC2', 'TC2c')
+        b2 = self.settingArray(1,2,3, 'TC2', 'TC2b')
         # TC2c: AC.set([1,4,1]); assert_equal(1,AC.last(arr))
         c2 = self.settingArray(1, 4, 1, 'TC2', 'TC2c')
 
@@ -72,7 +75,14 @@ class TestArryCalc(unittest.TestCase):
         self.assertEqual(2, c3.avg())
 
 
-
 if __name__ == '__main__':
   
-    unittest.main()
+    def main(out = sys.stderr, verbosity = 2):
+        loader = unittest.TestLoader()
+  
+        suite = loader.loadTestsFromModule(sys.modules[__name__])
+        unittest.TextTestRunner(out, verbosity = verbosity).run(suite)
+  
+    with open('test_F5-Output.txt', 'w') as f:
+        main(f)
+
