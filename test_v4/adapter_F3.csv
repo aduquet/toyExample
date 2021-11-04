@@ -1,0 +1,10 @@
+testID,instanceID,get,avg,first,last
+test_avg,test_avg_a,"[0, 0, 0]",0.0,0,0
+test_avg,test_avg_b,"[1, 2, 3]",2.0,2,3
+test_avg,test_avg_c,"[1, 4, 1]",2.0,4,1
+test_first,test_first_a,"[0, 0, 0]",0.0,0,0
+test_first,test_first_b,"[1, 2, 3]",2.0,2,3
+test_first,test_first_c,"[1, 4, 1]",2.0,4,1
+test_last,test_last_a,"[0, 0, 0]",0.0,0,0
+test_last,test_last_b,"[1, 2, 3]",2.0,2,3
+test_last,test_last_c,"[1, 4, 1]",2.0,4,1

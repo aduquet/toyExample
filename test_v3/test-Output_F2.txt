@@ -1,0 +1,44 @@
+test_avg (__main__.TestArryCalc) ... FAIL
+test_first (__main__.TestArryCalc) ... ok
+test_getter (__main__.TestArryCalc) ... FAIL
+test_last (__main__.TestArryCalc) ... FAIL
+
+======================================================================
+FAIL: test_avg (__main__.TestArryCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_F2.py", line 88, in test_avg
+    self.assertEqual(2, b3.avg())
+AssertionError: 2 != 1.0
+
+======================================================================
+FAIL: test_getter (__main__.TestArryCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_F2.py", line 46, in test_getter
+    self.assertEqual([1,2,3], b1.getter())
+AssertionError: Lists differ: [1, 2, 3] != [1, 2, 0]
+
+First differing element 2:
+3
+0
+
+- [1, 2, 3]
+?        ^
+
++ [1, 2, 0]
+?        ^
+
+
+======================================================================
+FAIL: test_last (__main__.TestArryCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_F2.py", line 74, in test_last
+    self.assertEqual(3, b2.last())
+AssertionError: 3 != 0
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.052s
+
+FAILED (failures=3)
