@@ -3,10 +3,10 @@ class arrayCalculator:
     def __init__(self):
         self.arr = []
 
-    def sett(self, val1, val2, val3):
+    def setter(self, val1, val2, val3):
         self.arr = [val1, val2, val3]
 
-    def gett(self):
+    def getter(self):
         return self.arr
     
     def avg(self):
