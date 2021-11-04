@@ -15,7 +15,7 @@ class arrayCalculator:
         self.arr = [val1, val2, val3]
 
     def getter(self):
-        print(self.arr)
+        return self.arr
     
     def avg(self):
         sum = 0
