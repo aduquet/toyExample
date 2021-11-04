@@ -1,0 +1,16 @@
+testOne (__main__.TestArryCalc) ... ok
+testTwo (__main__.TestArryCalc) ... ok
+testThree (__main__.TestArryCalc) ... FAIL
+
+======================================================================
+FAIL: testThree (__main__.TestArryCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_F5.py", line 74, in testThree
+    self.assertEqual(2, b3.avg())
+AssertionError: 2 != 1.6666666666666667
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.050s
+
+FAILED (failures=1)
