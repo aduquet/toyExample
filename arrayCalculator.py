@@ -4,36 +4,27 @@
 -	AC has a getter method get that displays the elements of the instance variable arr
 -	AC has a method avg that returns the average value of the three elements of arr
 -	AC has a method first that returns the value of the first element of arr
--	AC has a method last that returns the value of the last element of arr
-'''
+-	AC has a method last that returns the value of the last element of arr '''
+
 class arrayCalculator:
 
     def __init__(self):
-
         self.arr = []
 
-    def sett(self, val1, val2, val3):
-        # self.arr.append(val1, val2, val3)
+    def setter(self, val1, val2, val3):
         self.arr = [val1, val2, val3]
 
-    def gett(self):
-        return self.arr
+    def getter(self):
+        print(self.arr)
     
     def avg(self):
-
         sum = 0
         for i in self.arr:
-            sum += i
-        
+            sum += i      
         return sum/len(self.arr)
 
     def first(self):
-        
         return self.arr[0]
 
     def last(self):
-
         return self.arr[len(self.arr)-1]
-        
-
-
