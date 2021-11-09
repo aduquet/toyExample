@@ -1,0 +1,14 @@
+testOne_a1 (__main__.TestArryCalc) ... ok
+testOne_b1 (__main__.TestArryCalc) ... ok
+testOne_c1 (__main__.TestArryCalc) ... ok
+testThree_a3 (__main__.TestArryCalc) ... ok
+testThree_b3 (__main__.TestArryCalc) ... ok
+testThree_c3 (__main__.TestArryCalc) ... ok
+testTwo_a2 (__main__.TestArryCalc) ... ok
+testTwo_b2 (__main__.TestArryCalc) ... ok
+testTwo_c2 (__main__.TestArryCalc) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.049s
+
+OK

@@ -1,0 +1,17 @@
+test_avg (__main__.TestArryCalc) ... FAIL
+test_first (__main__.TestArryCalc) ... ok
+test_getter (__main__.TestArryCalc) ... ok
+test_last (__main__.TestArryCalc) ... ok
+
+======================================================================
+FAIL: test_avg (__main__.TestArryCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_F5.py", line 86, in test_avg
+    self.assertEqual(2, test_avg_b.avg())
+AssertionError: 2 != 1.6666666666666667
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.118s
+
+FAILED (failures=1)
