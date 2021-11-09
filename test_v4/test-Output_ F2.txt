@@ -1,23 +1,34 @@
 test_avg (__main__.TestArryCalc) ... FAIL
 test_first (__main__.TestArryCalc) ... ok
-test_getter (__main__.TestArryCalc) ... ERROR
+test_getter (__main__.TestArryCalc) ... FAIL
 test_last (__main__.TestArryCalc) ... FAIL
-
-======================================================================
-ERROR: test_getter (__main__.TestArryCalc)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_F2.py", line 40, in test_getter
-    test_getter_a = self.adapterSetting(0,0,0, TC, TC + '_a')
-AttributeError: 'TestArryCalc' object has no attribute 'adapterSetting'
 
 ======================================================================
 FAIL: test_avg (__main__.TestArryCalc)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "test_F2.py", line 87, in test_avg
+  File "test_F2.py", line 86, in test_avg
     self.assertEqual(2, test_avg_b.avg())
 AssertionError: 2 != 1.0
+
+======================================================================
+FAIL: test_getter (__main__.TestArryCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_F2.py", line 47, in test_getter
+    self.assertEqual([1,2,3], test_getter_b.getter())
+AssertionError: Lists differ: [1, 2, 3] != [1, 2, 0]
+
+First differing element 2:
+3
+0
+
+- [1, 2, 3]
+?        ^
+
++ [1, 2, 0]
+?        ^
+
 
 ======================================================================
 FAIL: test_last (__main__.TestArryCalc)
@@ -28,6 +39,6 @@ Traceback (most recent call last):
 AssertionError: 3 != 0
 
 ----------------------------------------------------------------------
-Ran 4 tests in 0.055s
+Ran 4 tests in 0.066s
 
-FAILED (failures=2, errors=1)
+FAILED (failures=3)

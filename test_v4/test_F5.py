@@ -50,9 +50,9 @@ class TestArryCalc(unittest.TestCase):
 
     def test_first(self): 
         TC = 'test_first'
-        test_first_a = self.settingArray(0,0,0, TC, TC + '_a')
-        test_first_b = self.settingArray(1,2,3, TC, TC + '_b')
-        test_first_c = self.settingArray(1, 4, 1, TC, TC + '_c')
+        test_first_a = self.adapterSetting(0,0,0, TC, TC + '_a')
+        test_first_b = self.adapterSetting(1,2,3, TC, TC + '_b')
+        test_first_c = self.adapterSetting(1, 4, 1, TC, TC + '_c')
 
         # test_first_a: AC.set([0,0,0]); assert_equal(0,AC.first(arr)) – input [0,0,0]
         self.assertEqual(0, test_first_a.first())
@@ -63,9 +63,9 @@ class TestArryCalc(unittest.TestCase):
 
     def test_last(self): 
         TC = 'test_last'
-        test_last_a = self.settingArray(0,0,0, TC, TC + '_a')
-        test_last_b = self.settingArray(1,2,3, TC, TC + '_b')
-        test_last_c = self.settingArray(1, 4, 1, TC, TC + '_c')
+        test_last_a = self.adapterSetting(0,0,0, TC, TC + '_a')
+        test_last_b = self.adapterSetting(1,2,3, TC, TC + '_b')
+        test_last_c = self.adapterSetting(1, 4, 1, TC, TC + '_c')
 
         # test_last_a: AC.set([0,0,0]); assert_equal(0,AC.last(arr)) – input [0,0,0]
         self.assertEqual(0, test_last_a.last())       
@@ -76,9 +76,9 @@ class TestArryCalc(unittest.TestCase):
 
     def test_avg(self):
         TC = 'test_avg'
-        test_avg_a = self.settingArray(0,0,0, TC, TC + '_a')
-        test_avg_b = self.settingArray(1,2,3, TC, TC + '_b')
-        test_avg_c = self.settingArray(1, 4, 1, TC, TC + '_c')
+        test_avg_a = self.adapterSetting(0,0,0, TC, TC + '_a')
+        test_avg_b = self.adapterSetting(1,2,3, TC, TC + '_b')
+        test_avg_c = self.adapterSetting(1, 4, 1, TC, TC + '_c')
         
         # test_avg_a: AC.set([0,0,0]); assert_equal(0,AC.avg(arr)) – input [0,0,0]
         self.assertEqual(0, test_avg_a.avg())

@@ -19,12 +19,12 @@ class TestArryCalc(unittest.TestCase):
         
         if not os.path.exists(resultsPath):    
             with open('adapter.csv', 'a', newline = '') as f:
-                df_main = df_main.sort_values(by=['testID'], ascending=True)
+                # df_main = df_main.sort_values(by=['testID'], ascending=True)
                 df_main.to_csv(f, index = False, header = True)
 
         else:
             with open('adapter.csv', 'a', newline = '') as f:
-                df_main = df_main.sort_values(by=['testID'], ascending=True)
+                # df_main = df_main.sort_values(by=['testID'], ascending=True)
                 df_main.to_csv(f, index = False, header = False)
  
     def adapterSetting(self, val1, val2, val3, testID, instansceID):
