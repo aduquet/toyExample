@@ -1,9 +1,0 @@
-test_avg (__main__.TestArryCalc) ... ok
-test_first (__main__.TestArryCalc) ... ok
-test_getter (__main__.TestArryCalc) ... ok
-test_last (__main__.TestArryCalc) ... ok
-
-----------------------------------------------------------------------
-Ran 4 tests in 0.063s
-
-OK
