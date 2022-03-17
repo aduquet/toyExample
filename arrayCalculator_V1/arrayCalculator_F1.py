@@ -21,3 +21,9 @@ class arrayCalculator:
 
     def last(self):
         return self.arr[len(self.arr)-1]
+    
+    def isEmpty(self):
+        if len(len(self.arr)) == 0:
+            return True
+        else:
+            return False
