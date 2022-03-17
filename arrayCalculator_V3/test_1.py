@@ -29,7 +29,7 @@ class TestArryCalc(unittest.TestCase):
  
     def settingArray(self, val1, val2, val3, testID, instansceID):
         
-        a = arrayCalculator()
+        a = ArrayCalculator()
         a.setter(val1,val2, val3)
         df_main = getState(self, a)
         self.saveState(df_main, testID, instansceID)
