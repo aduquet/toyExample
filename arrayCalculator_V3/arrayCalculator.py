@@ -1,5 +1,9 @@
+import string
+
+
 class ArrayCalculator:
     
+    #Create the array
     def __init__(self):
         self.arr = []
 
@@ -7,7 +11,7 @@ class ArrayCalculator:
         if type(val) == list:
             for i in val:
                 self.arr.append(i)
-        
+
         else:
             self.arr.append(val)
 
@@ -24,13 +28,17 @@ class ArrayCalculator:
             return False
         
     def getIndexSearch(self, valtosearch):
-        self.arr.append(valtoadd)
+        self.arr.append(valtosearch)
         
     def avg(self):
-        sum = 0
-        for i in self.arr:
-            sum += i      
-        return sum/len(self.arr)
+        
+        if self.isEmpty() == False:
+            sum = 0
+            for i in self.arr:
+                sum += i      
+            return sum/len(self.arr)
+        else:
+            return ('error!')
 
     def getFirst(self):
         return self.arr[0]

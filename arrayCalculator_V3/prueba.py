@@ -8,6 +8,10 @@ myArrayB = ArrayCalculator()
 myArrayValuesB = [4,5,6,7]
 myArrayB.setter(myArrayValuesB)
 
+myArrayC = '1,2,3,4'
+myArrayValuesC = [4,5,6,7]
+myArrayC.setter(myArrayValuesB)
+
 print(myArrayA.getter())
 print(myArrayB.getter())
 
