@@ -72,7 +72,6 @@ class ArrayCalculator:
             return self.arr[0]
         else:
             return ('error! the array is empty or the value is not in the array')
-        
     
     def getSecondLast(self):
         if self.isEmpty() == False:
@@ -109,7 +108,16 @@ class ArrayCalculator:
             return self.arr.index(valtosearch)
         else:
             return ('error! the array is empty or the value is not in the array')  
-        
+
+    def isEmpty(self):
+        if self.getSize() == 0:
+            return True
+        else:
+            return False
+    
+    def getSize(self):
+        return len(self.arr)
+            
     def avg(self):
         
         if self.isEmpty() == False:
@@ -123,13 +131,19 @@ class ArrayCalculator:
         else:
             return ('error! the array is empty')
 
-
-    
-    def isEmpty(self):
-        if self.getSize() == 0:
-            return True
+    def bubbleSort(self, reverse):
+        arrySize = self.getSize()
+        if reverse == False:
+            for n in range(arrySize - 1, 0, -1):
+                for i in range(n):
+                    if self.arr[i] > self.arr[i + 1]:
+                        # swapping data if the element is less than next element in the array
+                        self.arr[i], self.arr[i + 1] = self.arr[i + 1], self.arr[i]
+            return self.arr
         else:
-            return False
-    
-    def getSize(self):
-        return len(self.arr)
+            for i in range(arrySize - 1):
+                for j in range(0, arrySize - i - 1 ):
+                    if self.arr[j] < self.arr[j + 1] :
+                        self.arr[j], self.arr[j + 1] = self.arr[j + 1], self.arr[j]
+        
+            return self.arr

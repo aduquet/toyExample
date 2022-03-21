@@ -32,6 +32,8 @@ print('avg_myArrayA: ', myArrayA.avg())
 myArrayC = ArrayCalculator()
 print('avg_myArrayC empty array: ', myArrayC.avg(), '\n')
 
+print( 'bubbleSort: ', myArrayA.bubbleSort(reverse=False))
+print( 'bubbleSort: ', myArrayA.bubbleSort(reverse=True))
 
 myArrayB = ArrayCalculator()
 myArrayValuesB = [4,5,6,7,8,9,10]
@@ -53,30 +55,9 @@ print('poptLast: ', myArrayB.getAll())
 myArrayB.popByElement(6)
 print('popByElement(6): ', myArrayB.getAll())
 
-myArrayB.popByIndex(100)
-print('popByIndex(100): ', myArrayB.getAll())
+#myArrayB.popByIndex(100)
+#print('popByIndex(100): ', myArrayB.getAll())
 
-myArrayB.popByIndex(3)
-print('popByIndex(3): ', myArrayB.getAll())
+myArrayB.popByIndex(1)
+print('popByIndex(1): ', myArrayB.getAll())
 
-myArrayB = ArrayCalculator()
-myArrayValuesB = [4,5,6,7]
-myArrayB.setter(myArrayValuesB)
-
-myArrayC = ArrayCalculator()
-myArrayValuesC = [4,5,6,7]
-myArrayC.setter(myArrayValuesB)
-
-print(myArrayA.getAll())
-print(myArrayB.getAll())
-
-
-
-
-
-print(myArrayA.getAll())
-print(myArrayB.getAll())
-
-myArrayD = ArrayCalculator()
-myArrayA.get(51)
-print(myArrayA.getAll())
