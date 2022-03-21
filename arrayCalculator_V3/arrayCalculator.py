@@ -1,4 +1,7 @@
 
+from msilib.schema import Error
+
+
 class ArrayCalculator:
     
     #Create the array
@@ -25,18 +28,36 @@ class ArrayCalculator:
     def insertByIndex(self, valtoadd, index):
         self.arr.insert(index, valtoadd)
     
-    def popFirst(self, valtoadd):
-        self.arr.pop(0,valtoadd)
+    def popFirst(self):
+        try:
+            self.arr.pop(0)
+        except ValueError:
+            pass
+
+    def popSecondLast(self):
+        try:
+            self.arr.pop(self.getSize() -1)
+        except ValueError:
+            pass
+        
+    def poptLast(self):
+        try:
+            self.arr.pop(self.getSize())
+        except ValueError:
+            pass
     
-    def popSecondLast(self, valtoadd):
-        self.arr.pop(self.getSize() -1, valtoadd)
+    def popByIndex(self, index):
+        try:
+            self.arr.pop(index)
+        except ValueError:
+            pass
     
-    def poptLast(self, valtoadd):
-        self.arr.pop(self.getSize(), valtoadd)
-    
-    def popByIndex(self, valtoadd, index):
-        self.arr.pop(index, valtoadd)    
-    
+    def popByElement(self, val):
+        try:
+            elementIndex = self.getIndexSearch(val)
+            self.arr.pop(elementIndex)
+        except ValueError:
+            pass
     
     def getter(self):
         return self.arr
