@@ -61,3 +61,5 @@ print('popByElement(6): ', myArrayB.getAll())
 myArrayB.popByIndex(1)
 print('popByIndex(1): ', myArrayB.getAll())
 
+a = [101, 104]
+print('Merger', myArrayA.mager(a))

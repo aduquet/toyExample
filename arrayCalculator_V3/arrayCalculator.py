@@ -117,7 +117,24 @@ class ArrayCalculator:
     
     def getSize(self):
         return len(self.arr)
+    
+    def bubbleSort(self, reverse):
+            arrySize = self.getSize()
+            if reverse == False:
+                for n in range(arrySize - 1, 0, -1):
+                    for i in range(n):
+                        if self.arr[i] > self.arr[i + 1]:
+                            # swapping data if the element is less than next element in the array
+                            self.arr[i], self.arr[i + 1] = self.arr[i + 1], self.arr[i]
+                return self.arr
+            else:
+                for i in range(arrySize - 1):
+                    for j in range(0, arrySize - i - 1 ):
+                        if self.arr[j] < self.arr[j + 1] :
+                            self.arr[j], self.arr[j + 1] = self.arr[j + 1], self.arr[j]
             
+                return self.arr            
+    
     def avg(self):
         
         if self.isEmpty() == False:
@@ -131,19 +148,8 @@ class ArrayCalculator:
         else:
             return ('error! the array is empty')
 
-    def bubbleSort(self, reverse):
-        arrySize = self.getSize()
-        if reverse == False:
-            for n in range(arrySize - 1, 0, -1):
-                for i in range(n):
-                    if self.arr[i] > self.arr[i + 1]:
-                        # swapping data if the element is less than next element in the array
-                        self.arr[i], self.arr[i + 1] = self.arr[i + 1], self.arr[i]
-            return self.arr
-        else:
-            for i in range(arrySize - 1):
-                for j in range(0, arrySize - i - 1 ):
-                    if self.arr[j] < self.arr[j + 1] :
-                        self.arr[j], self.arr[j + 1] = self.arr[j + 1], self.arr[j]
-        
+    def mager(self, NewArry):
+        if self.isEmpty() == False and len(NewArry) != 0:
+            for i in NewArry:
+                self.insertLast(i)
             return self.arr
