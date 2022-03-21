@@ -33,13 +33,13 @@ class ArrayCalculator:
 
     def popSecondLast(self):
         try:
-            self.arr.pop(self.getSize() -1)
+            self.arr.pop(self.getSize() - 2)
         except ValueError:
             pass
         
     def poptLast(self):
         try:
-            self.arr.pop(self.getSize())
+            self.arr.pop(self.getSize() - 1)
         except ValueError:
             pass
     
@@ -51,10 +51,15 @@ class ArrayCalculator:
     
     def popByElement(self, val):
         try:
-            elementIndex = self.getIndexSearch(val)
-            self.arr.pop(elementIndex)
+            if type(self.searchingToGetIndex(val)) != str:
+                elementIndex = self.searchingToGetIndex(val)
+                self.arr.pop(elementIndex)
+            else:
+                raise NameError('Error!')
+
         except ValueError:
-            pass
+            print('An exception flew by!')
+            raise NameError
     
     def getAll(self):
         if self.isEmpty() == False:
@@ -71,19 +76,19 @@ class ArrayCalculator:
     
     def getSecondLast(self):
         if self.isEmpty() == False:
-            return self.arr[self.getSize() -1]
+            return self.arr[self.getSize() - 1]
         else:
             return ('error! the array is empty or the value is not in the array')
     
     def getLast(self):
         if self.isEmpty() == False:
-            return self.arr[self.getSize()]
+            return self.arr[self.getSize() - 1]
         else:
             return ('error! the array is empty or the value is not in the array')
     
     def getByIndex(self, index):
         if self.isEmpty() == False:
-            if self.getSize <= index:
+            if index  <= self.getSize() :
                 return self.arr[index]
             else:
                 return ('error! the array is empty or the value is not in the array')
@@ -99,18 +104,22 @@ class ArrayCalculator:
         else:
             return ('error! the array is empty or the number is not in the array')
 
-    def searchingByIndex(self, valtosearch):
+    def searchingToGetIndex(self, valtosearch):
         if self.isEmpty() == False and self.searching(valtosearch) == True:
             return self.arr.index(valtosearch)
         else:
             return ('error! the array is empty or the value is not in the array')  
         
-    def avg(self):  
+    def avg(self):
+        
         if self.isEmpty() == False:
-            sum = 0
-            for i in self.arr:
-                sum += i      
-            return sum/len(self.arr)
+            try:
+                sum = 0
+                for i in self.arr:
+                    sum += i      
+                return sum/self.getSize()
+            except ZeroDivisionError:
+                return ("division by zero!")
         else:
             return ('error! the array is empty')
 
