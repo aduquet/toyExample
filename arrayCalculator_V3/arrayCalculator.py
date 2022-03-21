@@ -22,6 +22,22 @@ class ArrayCalculator:
     def insertLast(self, valtoadd):
         self.arr.insert(self.getSize(), valtoadd)
     
+    def insertByIndex(self, valtoadd, index):
+        self.arr.insert(index, valtoadd)
+    
+    def popFirst(self, valtoadd):
+        self.arr.pop(0,valtoadd)
+    
+    def popSecondLast(self, valtoadd):
+        self.arr.pop(self.getSize() -1, valtoadd)
+    
+    def poptLast(self, valtoadd):
+        self.arr.pop(self.getSize(), valtoadd)
+    
+    def popByIndex(self, valtoadd, index):
+        self.arr.pop(index, valtoadd)    
+    
+    
     def getter(self):
         return self.arr
            
