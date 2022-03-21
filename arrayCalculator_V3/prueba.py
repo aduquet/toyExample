@@ -46,7 +46,7 @@ print('popFirst: ', myArrayB.getAll())
 myArrayB.popSecondLast()
 print('popSecondLast: ', myArrayB.getAll())
 
-myArrayB.poptLast()
+myArrayB.popLast()
 print('poptLast: ', myArrayB.getAll())
 
 #myArrayB.popByElement(2)
@@ -69,3 +69,4 @@ b = [2,2,2,2,2,2,2,2,2]
 print('elementWiseProduct', myArrayA.elementWiseProduct(b))
 
 print('dotProduct', myArrayA.dotProduct(b))
+

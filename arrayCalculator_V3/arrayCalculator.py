@@ -37,7 +37,7 @@ class ArrayCalculator:
         except ValueError:
             pass
         
-    def poptLast(self):
+    def popLast(self):
         try:
             self.arr.pop(self.getSize() - 1)
         except ValueError:
@@ -60,7 +60,19 @@ class ArrayCalculator:
         except ValueError:
             print('An exception flew by!')
             raise NameError
+
+    def clearList(self):
+        self.arr.clear()
+
+    def isEmpty(self):
+        if self.getSize() == 0:
+            return True
+        else:
+            return False
     
+    def getSize(self):
+        return len(self.arr)
+        
     def getAll(self):
         if self.isEmpty() == False:
             return self.arr
@@ -93,7 +105,7 @@ class ArrayCalculator:
                 return ('error! the array is empty or the value is not in the array')
         else:
             return ('error! the array is empty or the value is not in the array')
-  
+
     def searching(self, valtosearch):
         if self.isEmpty() == False:
             if valtosearch in self.arr:
@@ -109,82 +121,73 @@ class ArrayCalculator:
         else:
             return ('error! the array is empty or the value is not in the array')  
 
-    def isEmpty(self):
-        if self.getSize() == 0:
-            return True
-        else:
-            return False
-    
-    def getSize(self):
-        return len(self.arr)
-    
     def bubbleSort(self, reverse):
-            arrySize = self.getSize()
+            arraySize = self.getSize()
             if reverse == False:
-                for n in range(arrySize - 1, 0, -1):
+                for n in range(arraySize - 1, 0, -1):
                     for i in range(n):
                         if self.arr[i] > self.arr[i + 1]:
                             # swapping data if the element is less than next element in the array
                             self.arr[i], self.arr[i + 1] = self.arr[i + 1], self.arr[i]
                 return self.arr
             else:
-                for i in range(arrySize - 1):
-                    for j in range(0, arrySize - i - 1 ):
+                for i in range(arraySize - 1):
+                    for j in range(0, arraySize - i - 1 ):
                         if self.arr[j] < self.arr[j + 1] :
                             self.arr[j], self.arr[j + 1] = self.arr[j + 1], self.arr[j]
             
                 return self.arr            
-    
-    def avg(self):
-        
-        if self.isEmpty() == False:
-            try:
-                sum = 0
-                for i in self.arr:
-                    sum += i      
-                return sum/self.getSize()
-            except ZeroDivisionError:
-                return ("division by zero!")
-        else:
-            return ('error! the array is empty')
 
-    def mager(self, NewArry):
-        if self.isEmpty() == False and len(NewArry) != 0:
-            for i in NewArry:
+    def mager(self, newArray):
+        if self.isEmpty() == False and len(newArray) != 0:
+            for i in newArray:
                 self.insertLast(i)
             return self.arr
         
-    def elementWiseProduct(self, NewArry):
+    def avg(self):
+            
+            if self.isEmpty() == False:
+                try:
+                    sum = 0
+                    for i in self.arr:
+                        sum += i      
+                    return sum/self.getSize()
+                except ZeroDivisionError:
+                    return ("division by zero!")
+            else:
+                return ('error! the array is empty')
+            
+    def elementWiseProduct(self, newArray):
         aux = []
-        if self.getSize() == len(NewArry):
-            for i in range(0, len(NewArry)):
-                aux.append(self.arr[i] * NewArry[i])
+        if self.getSize() == len(newArray):
+            for i in range(0, len(newArray)):
+                aux.append(self.arr[i] * newArray[i])
             return aux
         else:
             return ('error!')
          
-    def dotProduct(self, NewArry):
+    def dotProduct(self, newArray):
         aux = []
-        if self.getSize() == len(NewArry):
-            aux = self.elementWiseProduct(NewArry)
+        if self.getSize() == len(newArray):
+            aux = self.elementWiseProduct(newArray)
             return sum(aux)
         else:
             return ('error!')
     
-    def suma(self, NewArry):
+    def suma(self, newArray):
         aux = []
-        if self.getSize() == len(NewArry):
-            for i in range(0, len(NewArry)):
-                aux.append(self.arr[i] + NewArry[i])
+        if self.getSize() == len(newArray):
+            for i in range(0, len(newArray)):
+                aux.append(self.arr[i] + newArray[i])
             return aux
         else:
             return ('error!')
     
-    def diff(self, NewArry):
+    def diff(self, newArray):
         aux = []
-        if self.getSize() == len(NewArry):
-            for i in range(0, len(NewArry)):
-                aux.append(self.arr[i] - NewArry[i])
+        if self.getSize() == len(newArray):
+            for i in range(0, len(newArray)):
+                aux.append(self.arr[i] - newArray[i])
             return aux
         else:
             return ('error!')
