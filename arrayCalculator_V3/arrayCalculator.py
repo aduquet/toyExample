@@ -1,5 +1,3 @@
-import string
-
 
 class ArrayCalculator:
     
@@ -14,21 +12,33 @@ class ArrayCalculator:
 
         else:
             self.arr.append(val)
-
+    
+    def insertFirst(self, valtoadd):
+        self.arr.insert(0,valtoadd)
+    
+    def insertSecondLast(self, valtoadd):
+        self.arr.insert(self.getSize() -1, valtoadd)
+    
+    def insertLast(self, valtoadd):
+        self.arr.insert(self.getSize(), valtoadd)
+    
     def getter(self):
         return self.arr
-    
-    def insert(self, valtoadd):
-        self.arr.append(valtoadd)
-    
+           
     def searching(self, valtosearch):
-        if valtosearch in self.arr:
-            return True
+        if self.isEmpty() == False:
+            if valtosearch in self.arr:
+                return True
+            else:
+                return False
         else:
-            return False
+            return ('error! the array is empty or the number is not in the array')
         
     def getIndexSearch(self, valtosearch):
-        self.arr.append(valtosearch)
+        if self.isEmpty() == False and self.searching(valtosearch) == True:
+            return self.arr.index(valtosearch)
+        else:
+            return ('error! the array is empty or the number is not in the array')
         
     def avg(self):
         
@@ -38,13 +48,16 @@ class ArrayCalculator:
                 sum += i      
             return sum/len(self.arr)
         else:
-            return ('error!')
+            return ('error! the array is empty')
 
     def getFirst(self):
         return self.arr[0]
-
-    def last(self):
-        return self.arr[self.arr.getSize() -1] 
+    
+    def getSecondLast(self):
+        return self.arr[self.getSize() -1]
+    
+    def getLast(self):
+        return self.arr[self.getSize()]
     
     def isEmpty(self):
         if self.getSize() == 0:
