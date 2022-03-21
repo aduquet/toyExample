@@ -63,3 +63,9 @@ print('popByIndex(1): ', myArrayB.getAll())
 
 a = [101, 104]
 print('Merger', myArrayA.mager(a))
+
+b = [2,2,2,2,2,2,2,2,2]
+
+print('elementWiseProduct', myArrayA.elementWiseProduct(b))
+
+print('dotProduct', myArrayA.dotProduct(b))

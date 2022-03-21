@@ -159,7 +159,32 @@ class ArrayCalculator:
         if self.getSize() == len(NewArry):
             for i in range(0, len(NewArry)):
                 aux.append(self.arr[i] * NewArry[i])
-            
             return aux
+        else:
+            return ('error!')
+         
+    def dotProduct(self, NewArry):
+        aux = []
+        if self.getSize() == len(NewArry):
+            aux = self.elementWiseProduct(NewArry)
+            return sum(aux)
+        else:
+            return ('error!')
     
+    def suma(self, NewArry):
+        aux = []
+        if self.getSize() == len(NewArry):
+            for i in range(0, len(NewArry)):
+                aux.append(self.arr[i] + NewArry[i])
+            return aux
+        else:
+            return ('error!')
     
+    def diff(self, NewArry):
+        aux = []
+        if self.getSize() == len(NewArry):
+            for i in range(0, len(NewArry)):
+                aux.append(self.arr[i] - NewArry[i])
+            return aux
+        else:
+            return ('error!')
