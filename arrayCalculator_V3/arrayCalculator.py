@@ -153,3 +153,13 @@ class ArrayCalculator:
             for i in NewArry:
                 self.insertLast(i)
             return self.arr
+        
+    def elementWiseProduct(self, NewArry):
+        aux = []
+        if self.getSize() == len(NewArry):
+            for i in range(0, len(NewArry)):
+                aux.append(self.arr[i] * NewArry[i])
+            
+            return aux
+    
+    
