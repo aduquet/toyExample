@@ -1,6 +1,4 @@
-
 from msilib.schema import Error
-
 
 class ArrayCalculator:
     
@@ -12,7 +10,6 @@ class ArrayCalculator:
         if type(val) == list:
             for i in val:
                 self.arr.append(i)
-
         else:
             self.arr.append(val)
     
@@ -59,9 +56,40 @@ class ArrayCalculator:
         except ValueError:
             pass
     
-    def getter(self):
-        return self.arr
-           
+    def getAll(self):
+        if self.isEmpty() == False:
+            return self.arr
+        else:
+            return ('error! the array is empty or the value is not in the array')
+        
+    def getFirst(self):
+        if self.isEmpty() == False:
+            return self.arr[0]
+        else:
+            return ('error! the array is empty or the value is not in the array')
+        
+    
+    def getSecondLast(self):
+        if self.isEmpty() == False:
+            return self.arr[self.getSize() -1]
+        else:
+            return ('error! the array is empty or the value is not in the array')
+    
+    def getLast(self):
+        if self.isEmpty() == False:
+            return self.arr[self.getSize()]
+        else:
+            return ('error! the array is empty or the value is not in the array')
+    
+    def getByIndex(self, index):
+        if self.isEmpty() == False:
+            if self.getSize <= index:
+                return self.arr[index]
+            else:
+                return ('error! the array is empty or the value is not in the array')
+        else:
+            return ('error! the array is empty or the value is not in the array')
+  
     def searching(self, valtosearch):
         if self.isEmpty() == False:
             if valtosearch in self.arr:
@@ -70,15 +98,14 @@ class ArrayCalculator:
                 return False
         else:
             return ('error! the array is empty or the number is not in the array')
-        
-    def getIndexSearch(self, valtosearch):
+
+    def searchingByIndex(self, valtosearch):
         if self.isEmpty() == False and self.searching(valtosearch) == True:
             return self.arr.index(valtosearch)
         else:
-            return ('error! the array is empty or the number is not in the array')
+            return ('error! the array is empty or the value is not in the array')  
         
-    def avg(self):
-        
+    def avg(self):  
         if self.isEmpty() == False:
             sum = 0
             for i in self.arr:
@@ -87,14 +114,7 @@ class ArrayCalculator:
         else:
             return ('error! the array is empty')
 
-    def getFirst(self):
-        return self.arr[0]
-    
-    def getSecondLast(self):
-        return self.arr[self.getSize() -1]
-    
-    def getLast(self):
-        return self.arr[self.getSize()]
+
     
     def isEmpty(self):
         if self.getSize() == 0:
