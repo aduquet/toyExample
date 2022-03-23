@@ -1,5 +1,13 @@
+from fileinput import filename
+import glob as gl
+from importlib import import_module
+import pathlib
+from pydoc import cli
 import random
-import time 
+import time
+import os
+
+
 #this fuzzer function was taken from fuzzingbook.org
 #A string of up to max_length characters in the range [char_start, char_start + char_range)
 def fuzzer(max_length, char_start, char_range) -> str:
@@ -11,20 +19,45 @@ def fuzzer(max_length, char_start, char_range) -> str:
         out += chr(random.randrange(char_start, char_start + char_range))
     return out
     
-def saveArraysInputs(numb, fileName):
+def saveArraysInputs(numb, fileNamePath):
     
-    with open(fileName, "a") as f:
+    with open(fileNamePath, "a") as f:
         f.write(numb + '\n')
 
-start_time = time.time()
-end_time = 0
-while end_time <= 5 :
+def conv(fuzzerOutput):
+    aux = []
+    for i in fuzzerOutput:
+        aux.append(i)
+    return aux
     
-    out = fuzzer(20, ord('0'), 10)
-    out2 = saveArraysInputs(out)
-    print(out2)
-    print(out)
-    end_time = time.time() - start_time
-    print(end_time)
+def start(t, file_name, paths):
+    start_time = time.time()
+    end_time = 0
+    filenamePath = paths +'\\' + file_name
+    while end_time <= int(t) :
+        #fuzzerOutput = conv(fuzzer(20, ord('0'), 10))
+        #saveArraysInputs(fuzzerOutput, filenamePath)
+        saveArraysInputs(fuzzer(20, ord('0'), 10), filenamePath)
+        end_time = time.time() - start_time
     
-#print(random.randrange(0,100))
+if __name__ == '__main__':
+    import click
+    
+    @click.command()
+    @click.option('-t', '--time', 'time_limit', help = 'time limit=[time in seconds]')
+    @click.option('-o', '--output_name', 'file_out', help = 'File name')
+    
+    def main(time_limit, file_out):
+        print('*** Executing ***')
+        
+        paths = str(pathlib.Path().absolute()) + '\\' + 'FuzzerInputs'
+        
+        if not os.path.exists(paths):
+            os.mkdir('FuzzerInputs')
+
+        start(time_limit, file_out, paths)
+        print('*** Finished ***')
+        print('Generated inputs are saved in ' + paths + '\\' + file_out )
+
+main()
+        
