@@ -2,7 +2,7 @@ import os
 import pathlib
 import unittest
 import pandas as pd
-from adapter import *
+from arrayCalculator_V3.traceGenerator import *
 import sys
 sys.path.append("C://Users//duquet//Documents//GitHub//toyExample//")
 
