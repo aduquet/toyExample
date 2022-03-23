@@ -1,0 +1,16 @@
+test_001 (__main__.TestArryCalc) ... ERROR
+
+======================================================================
+ERROR: test_001 (__main__.TestArryCalc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "SUT_executions.py", line 93, in test_001
+    a1 = self.settingArray(0,0,0, TC, TC + '1a')
+  File "SUT_executions.py", line 85, in settingArray
+    df_main = getState(self, a)
+TypeError: getState() takes 1 positional argument but 2 were given
+
+----------------------------------------------------------------------
+Ran 1 test in 0.612s
+
+FAILED (errors=1)
