@@ -1,0 +1,122 @@
+    1: """
+       Functions to generate methods and pin them to the appropriate classes.
+       """
+    1: import operator
+       
+    1: from pandas.core.dtypes.generic import (
+           ABCDataFrame,
+           ABCSeries,
+       )
+       
+    1: from pandas.core.ops import roperator
+       
+       
+    1: def _get_method_wrappers(cls):
+           """
+           Find the appropriate operation-wrappers to use when defining flex/special
+           arithmetic, boolean, and comparison operations with the given class.
+       
+           Parameters
+           ----------
+           cls : class
+       
+           Returns
+           -------
+           arith_flex : function or None
+           comp_flex : function or None
+           """
+           # TODO: make these non-runtime imports once the relevant functions
+           #  are no longer in __init__
+    2:     from pandas.core.ops import (
+               flex_arith_method_FRAME,
+               flex_comp_method_FRAME,
+               flex_method_SERIES,
+           )
+       
+    2:     if issubclass(cls, ABCSeries):
+               # Just Series
+    1:         arith_flex = flex_method_SERIES
+    1:         comp_flex = flex_method_SERIES
+    1:     elif issubclass(cls, ABCDataFrame):
+    1:         arith_flex = flex_arith_method_FRAME
+    1:         comp_flex = flex_comp_method_FRAME
+    2:     return arith_flex, comp_flex
+       
+       
+    1: def add_flex_arithmetic_methods(cls):
+           """
+           Adds the full suite of flex arithmetic methods (``pow``, ``mul``, ``add``)
+           to the class.
+       
+           Parameters
+           ----------
+           cls : class
+               flex methods will be defined and pinned to this class
+           """
+    2:     flex_arith_method, flex_comp_method = _get_method_wrappers(cls)
+    2:     new_methods = _create_methods(cls, flex_arith_method, flex_comp_method)
+    4:     new_methods.update(
+    2:         {
+    2:             "multiply": new_methods["mul"],
+    2:             "subtract": new_methods["sub"],
+    2:             "divide": new_methods["div"],
+               }
+           )
+           # opt out of bool flex methods for now
+   10:     assert not any(kname in new_methods for kname in ("ror_", "rxor", "rand_"))
+       
+    2:     _add_methods(cls, new_methods=new_methods)
+       
+       
+    1: def _create_methods(cls, arith_method, comp_method):
+           # creates actual flex methods based upon arithmetic, and comp method
+           # constructors.
+       
+    2:     have_divmod = issubclass(cls, ABCSeries)
+           # divmod is available for Series
+       
+    2:     new_methods = {}
+       
+    4:     new_methods.update(
+    2:         {
+    2:             "add": arith_method(operator.add),
+    2:             "radd": arith_method(roperator.radd),
+    2:             "sub": arith_method(operator.sub),
+    2:             "mul": arith_method(operator.mul),
+    2:             "truediv": arith_method(operator.truediv),
+    2:             "floordiv": arith_method(operator.floordiv),
+    2:             "mod": arith_method(operator.mod),
+    2:             "pow": arith_method(operator.pow),
+    2:             "rmul": arith_method(roperator.rmul),
+    2:             "rsub": arith_method(roperator.rsub),
+    2:             "rtruediv": arith_method(roperator.rtruediv),
+    2:             "rfloordiv": arith_method(roperator.rfloordiv),
+    2:             "rpow": arith_method(roperator.rpow),
+    2:             "rmod": arith_method(roperator.rmod),
+               }
+           )
+    2:     new_methods["div"] = new_methods["truediv"]
+    2:     new_methods["rdiv"] = new_methods["rtruediv"]
+    2:     if have_divmod:
+               # divmod doesn't have an op that is supported by numexpr
+    1:         new_methods["divmod"] = arith_method(divmod)
+    1:         new_methods["rdivmod"] = arith_method(roperator.rdivmod)
+       
+    4:     new_methods.update(
+    2:         {
+    2:             "eq": comp_method(operator.eq),
+    2:             "ne": comp_method(operator.ne),
+    2:             "lt": comp_method(operator.lt),
+    2:             "gt": comp_method(operator.gt),
+    2:             "le": comp_method(operator.le),
+    2:             "ge": comp_method(operator.ge),
+               }
+           )
+       
+   50:     new_methods = {k.strip("_"): v for k, v in new_methods.items()}
+    2:     return new_methods
+       
+       
+    1: def _add_methods(cls, new_methods):
+   54:     for name, method in new_methods.items():
+   52:         setattr(cls, name, method)

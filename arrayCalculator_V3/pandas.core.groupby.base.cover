@@ -1,0 +1,163 @@
+    1: """
+       Provide basic components for groupby. These definitions
+       hold the allowlist of methods that are exposed on the
+       SeriesGroupBy and the DataFrameGroupBy objects.
+       """
+    1: from __future__ import annotations
+       
+    1: import dataclasses
+    1: from typing import Hashable
+       
+       
+    2: @dataclasses.dataclass(order=True, frozen=True)
+    1: class OutputKey:
+    1:     label: Hashable
+    1:     position: int
+       
+       
+       # special case to prevent duplicate plots when catching exceptions when
+       # forwarding methods from NDFrames
+    1: plotting_methods = frozenset(["plot", "hist"])
+       
+    1: common_apply_allowlist = (
+    3:     frozenset(
+    1:         [
+    1:             "quantile",
+    1:             "fillna",
+    1:             "mad",
+    1:             "take",
+    1:             "idxmax",
+    1:             "idxmin",
+    1:             "tshift",
+    1:             "skew",
+    1:             "corr",
+    1:             "cov",
+    1:             "diff",
+               ]
+           )
+    1:     | plotting_methods
+       )
+       
+    1: series_apply_allowlist: frozenset[str] = (
+    2:     common_apply_allowlist
+    2:     | frozenset(
+    1:         {"nlargest", "nsmallest", "is_monotonic_increasing", "is_monotonic_decreasing"}
+           )
+    1: ) | frozenset(["dtype", "unique"])
+       
+    2: dataframe_apply_allowlist: frozenset[str] = common_apply_allowlist | frozenset(
+    1:     ["dtypes", "corrwith"]
+       )
+       
+       # cythonized transformations or canned "agg+broadcast", which do not
+       # require postprocessing of the result by transform.
+    1: cythonized_kernels = frozenset(["cumprod", "cumsum", "shift", "cummin", "cummax"])
+       
+       # List of aggregation/reduction functions.
+       # These map each group to a single numeric value
+    2: reduction_kernels = frozenset(
+    1:     [
+    1:         "all",
+    1:         "any",
+    1:         "corrwith",
+    1:         "count",
+    1:         "first",
+    1:         "idxmax",
+    1:         "idxmin",
+    1:         "last",
+    1:         "mad",
+    1:         "max",
+    1:         "mean",
+    1:         "median",
+    1:         "min",
+    1:         "ngroup",
+    1:         "nth",
+    1:         "nunique",
+    1:         "prod",
+               # as long as `quantile`'s signature accepts only
+               # a single quantile value, it's a reduction.
+               # GH#27526 might change that.
+    1:         "quantile",
+    1:         "sem",
+    1:         "size",
+    1:         "skew",
+    1:         "std",
+    1:         "sum",
+    1:         "var",
+           ]
+       )
+       
+       # List of transformation functions.
+       # a transformation is a function that, for each group,
+       # produces a result that has the same shape as the group.
+       
+       
+       # TODO(2.0) Remove after pad/backfill deprecation enforced
+    1: def maybe_normalize_deprecated_kernels(kernel):
+           if kernel == "backfill":
+               kernel = "bfill"
+           elif kernel == "pad":
+               kernel = "ffill"
+           return kernel
+       
+       
+    2: transformation_kernels = frozenset(
+    1:     [
+    1:         "backfill",
+    1:         "bfill",
+    1:         "cumcount",
+    1:         "cummax",
+    1:         "cummin",
+    1:         "cumprod",
+    1:         "cumsum",
+    1:         "diff",
+    1:         "ffill",
+    1:         "fillna",
+    1:         "pad",
+    1:         "pct_change",
+    1:         "rank",
+    1:         "shift",
+    1:         "tshift",
+           ]
+       )
+       
+       # these are all the public methods on Grouper which don't belong
+       # in either of the above lists
+    2: groupby_other_methods = frozenset(
+    1:     [
+    1:         "agg",
+    1:         "aggregate",
+    1:         "apply",
+    1:         "boxplot",
+               # corr and cov return ngroups*ncolumns rows, so they
+               # are neither a transformation nor a reduction
+    1:         "corr",
+    1:         "cov",
+    1:         "describe",
+    1:         "dtypes",
+    1:         "expanding",
+    1:         "ewm",
+    1:         "filter",
+    1:         "get_group",
+    1:         "groups",
+    1:         "head",
+    1:         "hist",
+    1:         "indices",
+    1:         "ndim",
+    1:         "ngroups",
+    1:         "ohlc",
+    1:         "pipe",
+    1:         "plot",
+    1:         "resample",
+    1:         "rolling",
+    1:         "tail",
+    1:         "take",
+    1:         "transform",
+    1:         "sample",
+    1:         "value_counts",
+           ]
+       )
+       # Valid values  of `name` for `groupby.transform(name)`
+       # NOTE: do NOT edit this directly. New additions should be inserted
+       # into the appropriate list above.
+    1: transform_kernel_allowlist = reduction_kernels | transformation_kernels

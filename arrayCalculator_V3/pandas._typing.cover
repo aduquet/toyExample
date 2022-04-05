@@ -1,0 +1,297 @@
+    1: from __future__ import annotations
+       
+    1: from datetime import (
+           datetime,
+           timedelta,
+           tzinfo,
+       )
+    1: from os import PathLike
+    1: from typing import (
+           TYPE_CHECKING,
+           Any,
+           Callable,
+           Collection,
+           Dict,
+           Hashable,
+           Iterator,
+           List,
+           Literal,
+           Mapping,
+           Optional,
+           Protocol,
+           Sequence,
+           Tuple,
+           Type as type_t,
+           TypeVar,
+           Union,
+       )
+       
+    1: import numpy as np
+       
+       # To prevent import cycles place any internal imports in the branch below
+       # and use a string literal forward reference to it in subsequent types
+       # https://mypy.readthedocs.io/en/latest/common_issues.html#import-cycles
+    1: if TYPE_CHECKING:
+           import numpy.typing as npt
+       
+           from pandas._libs import (
+               Period,
+               Timedelta,
+               Timestamp,
+           )
+       
+           from pandas.core.dtypes.dtypes import ExtensionDtype
+       
+           from pandas import Interval
+           from pandas.core.arrays.base import ExtensionArray
+           from pandas.core.frame import DataFrame
+           from pandas.core.generic import NDFrame
+           from pandas.core.groupby.generic import (
+               DataFrameGroupBy,
+               GroupBy,
+               SeriesGroupBy,
+           )
+           from pandas.core.indexes.base import Index
+           from pandas.core.internals import (
+               ArrayManager,
+               BlockManager,
+               SingleArrayManager,
+               SingleBlockManager,
+           )
+           from pandas.core.resample import Resampler
+           from pandas.core.series import Series
+           from pandas.core.window.rolling import BaseWindow
+       
+           from pandas.io.formats.format import EngFormatter
+           from pandas.tseries.offsets import DateOffset
+       
+           # numpy compatible types
+           NumpyValueArrayLike = Union[npt._ScalarLike_co, npt.ArrayLike]
+           NumpySorter = Optional[npt._ArrayLikeInt_co]
+       
+       else:
+    1:     npt: Any = None
+       
+       
+       # array-like
+       
+    1: ArrayLike = Union["ExtensionArray", np.ndarray]
+    1: AnyArrayLike = Union[ArrayLike, "Index", "Series"]
+       
+       # scalars
+       
+    1: PythonScalar = Union[str, int, float, bool]
+    1: DatetimeLikeScalar = Union["Period", "Timestamp", "Timedelta"]
+    1: PandasScalar = Union["Period", "Timestamp", "Timedelta", "Interval"]
+    1: Scalar = Union[PythonScalar, PandasScalar]
+    1: IntStrT = TypeVar("IntStrT", int, str)
+       
+       
+       # timestamp and timedelta convertible types
+       
+    2: TimestampConvertibleTypes = Union[
+    1:     "Timestamp", datetime, np.datetime64, int, np.int64, float, str
+       ]
+    2: TimedeltaConvertibleTypes = Union[
+    1:     "Timedelta", timedelta, np.timedelta64, int, np.int64, float, str
+       ]
+    1: Timezone = Union[str, tzinfo]
+       
+       # NDFrameT is stricter and ensures that the same subclass of NDFrame always is
+       # used. E.g. `def func(a: NDFrameT) -> NDFrameT: ...` means that if a
+       # Series is passed into a function, a Series is always returned and if a DataFrame is
+       # passed in, a DataFrame is always returned.
+    1: NDFrameT = TypeVar("NDFrameT", bound="NDFrame")
+       
+    1: Axis = Union[str, int]
+    1: IndexLabel = Union[Hashable, Sequence[Hashable]]
+    1: Level = Union[Hashable, int]
+    1: Shape = Tuple[int, ...]
+    1: Suffixes = Tuple[Optional[str], Optional[str]]
+    1: Ordered = Optional[bool]
+    1: JSONSerializable = Optional[Union[PythonScalar, List, Dict]]
+    1: Frequency = Union[str, "DateOffset"]
+    1: Axes = Collection[Any]
+       
+    2: RandomState = Union[
+    2:     int,
+    1:     ArrayLike,
+    1:     np.random.Generator,
+    1:     np.random.BitGenerator,
+    1:     np.random.RandomState,
+       ]
+       
+       # dtypes
+    1: NpDtype = Union[str, np.dtype, type_t[Union[str, float, int, complex, bool, object]]]
+    1: Dtype = Union["ExtensionDtype", NpDtype]
+    1: AstypeArg = Union["ExtensionDtype", "npt.DTypeLike"]
+       # DtypeArg specifies all allowable dtypes in a functions its dtype argument
+    1: DtypeArg = Union[Dtype, Dict[Hashable, Dtype]]
+    1: DtypeObj = Union[np.dtype, "ExtensionDtype"]
+       
+       # For functions like rename that convert one label to another
+    1: Renamer = Union[Mapping[Hashable, Any], Callable[[Hashable], Hashable]]
+       
+       # to maintain type information across generic functions and parametrization
+    1: T = TypeVar("T")
+       
+       # used in decorators to preserve the signature of the function it decorates
+       # see https://mypy.readthedocs.io/en/stable/generics.html#declaring-decorators
+    1: FuncType = Callable[..., Any]
+    1: F = TypeVar("F", bound=FuncType)
+       
+       # types of vectorized key functions for DataFrame::sort_values and
+       # DataFrame::sort_index, among others
+    1: ValueKeyFunc = Optional[Callable[["Series"], Union["Series", AnyArrayLike]]]
+    1: IndexKeyFunc = Optional[Callable[["Index"], Union["Index", AnyArrayLike]]]
+       
+       # types of `func` kwarg for DataFrame.aggregate and Series.aggregate
+    1: AggFuncTypeBase = Union[Callable, str]
+    1: AggFuncTypeDict = Dict[Hashable, Union[AggFuncTypeBase, List[AggFuncTypeBase]]]
+    2: AggFuncType = Union[
+    2:     AggFuncTypeBase,
+    1:     List[AggFuncTypeBase],
+    1:     AggFuncTypeDict,
+       ]
+    2: AggObjType = Union[
+    1:     "Series",
+           "DataFrame",
+           "GroupBy",
+           "SeriesGroupBy",
+           "DataFrameGroupBy",
+           "BaseWindow",
+           "Resampler",
+       ]
+       
+    1: PythonFuncType = Callable[[Any], Any]
+       
+       # filenames and file-like-objects
+    1: AnyStr_cov = TypeVar("AnyStr_cov", str, bytes, covariant=True)
+    1: AnyStr_con = TypeVar("AnyStr_con", str, bytes, contravariant=True)
+       
+       
+    2: class BaseBuffer(Protocol):
+    1:     @property
+    1:     def mode(self) -> str:
+               # for _get_filepath_or_buffer
+               ...
+       
+    1:     def fileno(self) -> int:
+               # for _MMapWrapper
+               ...
+       
+    1:     def seek(self, __offset: int, __whence: int = ...) -> int:
+               # with one argument: gzip.GzipFile, bz2.BZ2File
+               # with two arguments: zip.ZipFile, read_sas
+               ...
+       
+    1:     def seekable(self) -> bool:
+               # for bz2.BZ2File
+               ...
+       
+    1:     def tell(self) -> int:
+               # for zip.ZipFile, read_stata, to_stata
+               ...
+       
+       
+    2: class ReadBuffer(BaseBuffer, Protocol[AnyStr_cov]):
+    1:     def read(self, __n: int | None = ...) -> AnyStr_cov:
+               # for BytesIOWrapper, gzip.GzipFile, bz2.BZ2File
+               ...
+       
+       
+    2: class WriteBuffer(BaseBuffer, Protocol[AnyStr_con]):
+    1:     def write(self, __b: AnyStr_con) -> Any:
+               # for gzip.GzipFile, bz2.BZ2File
+               ...
+       
+    1:     def flush(self) -> Any:
+               # for gzip.GzipFile, bz2.BZ2File
+               ...
+       
+       
+    2: class ReadPickleBuffer(ReadBuffer[bytes], Protocol):
+    1:     def readline(self) -> AnyStr_cov:
+               ...
+       
+       
+    2: class WriteExcelBuffer(WriteBuffer[bytes], Protocol):
+    1:     def truncate(self, size: int | None = ...) -> int:
+               ...
+       
+       
+    2: class ReadCsvBuffer(ReadBuffer[AnyStr_cov], Protocol):
+    1:     def __iter__(self) -> Iterator[AnyStr_cov]:
+               # for engine=python
+               ...
+       
+    1:     def readline(self) -> AnyStr_cov:
+               # for engine=python
+               ...
+       
+    1:     @property
+    1:     def closed(self) -> bool:
+               # for enine=pyarrow
+               ...
+       
+       
+    1: FilePath = Union[str, "PathLike[str]"]
+       
+       # for arbitrary kwargs passed during reading/writing files
+    1: StorageOptions = Optional[Dict[str, Any]]
+       
+       
+       # compression keywords and compression
+    1: CompressionDict = Dict[str, Any]
+    2: CompressionOptions = Optional[
+    1:     Union[Literal["infer", "gzip", "bz2", "zip", "xz", "zstd"], CompressionDict]
+       ]
+    1: XMLParsers = Literal["lxml", "etree"]
+       
+       
+       # types in DataFrameFormatter
+    2: FormattersType = Union[
+    1:     List[Callable], Tuple[Callable, ...], Mapping[Union[str, int], Callable]
+       ]
+    1: ColspaceType = Mapping[Hashable, Union[str, int]]
+    1: FloatFormatType = Union[str, Callable, "EngFormatter"]
+    2: ColspaceArgType = Union[
+    1:     str, int, Sequence[Union[str, int]], Mapping[Hashable, Union[str, int]]
+       ]
+       
+       # Arguments for fillna()
+    1: FillnaOptions = Literal["backfill", "bfill", "ffill", "pad"]
+       
+       # internals
+    2: Manager = Union[
+    1:     "ArrayManager", "SingleArrayManager", "BlockManager", "SingleBlockManager"
+       ]
+    1: SingleManager = Union["SingleArrayManager", "SingleBlockManager"]
+    1: Manager2D = Union["ArrayManager", "BlockManager"]
+       
+       # indexing
+       # PositionalIndexer -> valid 1D positional indexer, e.g. can pass
+       # to ndarray.__getitem__
+       # ScalarIndexer is for a single value as the index
+       # SequenceIndexer is for list like or slices (but not tuples)
+       # PositionalIndexerTuple is extends the PositionalIndexer for 2D arrays
+       # These are used in various __getitem__ overloads
+       # TODO(typing#684): add Ellipsis, see
+       # https://github.com/python/typing/issues/684#issuecomment-548203158
+       # https://bugs.python.org/issue41810
+       # Using List[int] here rather than Sequence[int] to disallow tuples.
+    1: ScalarIndexer = Union[int, np.integer]
+    1: SequenceIndexer = Union[slice, List[int], np.ndarray]
+    1: PositionalIndexer = Union[ScalarIndexer, SequenceIndexer]
+    1: PositionalIndexerTuple = Tuple[PositionalIndexer, PositionalIndexer]
+    1: PositionalIndexer2D = Union[PositionalIndexer, PositionalIndexerTuple]
+    1: if TYPE_CHECKING:
+           TakeIndexer = Union[Sequence[int], Sequence[np.integer], npt.NDArray[np.integer]]
+       else:
+    1:     TakeIndexer = Any
+       
+       # Windowing rank methods
+    1: WindowingRankType = Literal["average", "min", "max"]
+       
+       # read_csv engines
+    1: CSVEngine = Literal["c", "python", "pyarrow", "python-fwf"]

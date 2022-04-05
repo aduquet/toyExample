@@ -1,0 +1,226 @@
+    1: """
+       Base class for the internal managers. Both BlockManager and ArrayManager
+       inherit from this class.
+       """
+    1: from __future__ import annotations
+       
+    1: from typing import (
+           TypeVar,
+           final,
+       )
+       
+    1: import numpy as np
+       
+    1: from pandas._typing import (
+           ArrayLike,
+           DtypeObj,
+           Shape,
+       )
+    1: from pandas.errors import AbstractMethodError
+       
+    1: from pandas.core.dtypes.cast import (
+           find_common_type,
+           np_can_hold_element,
+       )
+       
+    1: from pandas.core.base import PandasObject
+    1: from pandas.core.indexes.api import (
+           Index,
+           default_index,
+       )
+       
+    1: T = TypeVar("T", bound="DataManager")
+       
+       
+    2: class DataManager(PandasObject):
+       
+           # TODO share more methods/attributes
+       
+    1:     axes: list[Index]
+       
+    1:     @property
+    1:     def items(self) -> Index:
+               raise AbstractMethodError(self)
+       
+    1:     @final
+    1:     def __len__(self) -> int:
+  720:         return len(self.items)
+       
+    1:     @property
+    1:     def ndim(self) -> int:
+               return len(self.axes)
+       
+    1:     @property
+    1:     def shape(self) -> Shape:
+10800:         return tuple(len(ax) for ax in self.axes)
+       
+    1:     @final
+    1:     def _validate_set_axis(self, axis: int, new_labels: Index) -> None:
+               # Caller is responsible for ensuring we have an Index object.
+  540:         old_len = len(self.axes[axis])
+  540:         new_len = len(new_labels)
+       
+  540:         if axis == 1 and len(self.items) == 0:
+                   # If we are setting the index on a DataFrame with no columns,
+                   #  it is OK to change the length.
+                   pass
+       
+  540:         elif new_len != old_len:
+                   raise ValueError(
+                       f"Length mismatch: Expected axis has {old_len} elements, new "
+                       f"values have {new_len} elements"
+                   )
+       
+    1:     def reindex_indexer(
+               self: T,
+               new_axis,
+               indexer,
+               axis: int,
+               fill_value=None,
+               allow_dups: bool = False,
+               copy: bool = True,
+               consolidate: bool = True,
+               only_slice: bool = False,
+           ) -> T:
+               raise AbstractMethodError(self)
+       
+    1:     @final
+    1:     def reindex_axis(
+               self: T,
+               new_index: Index,
+               axis: int,
+               fill_value=None,
+               consolidate: bool = True,
+               only_slice: bool = False,
+           ) -> T:
+               """
+               Conform data manager to new index.
+               """
+               new_index, indexer = self.axes[axis].reindex(new_index)
+       
+               return self.reindex_indexer(
+                   new_index,
+                   indexer,
+                   axis=axis,
+                   fill_value=fill_value,
+                   copy=False,
+                   consolidate=consolidate,
+                   only_slice=only_slice,
+               )
+       
+    1:     def _equal_values(self: T, other: T) -> bool:
+               """
+               To be implemented by the subclasses. Only check the column values
+               assuming shape and indexes have already been checked.
+               """
+               raise AbstractMethodError(self)
+       
+    1:     @final
+    1:     def equals(self, other: object) -> bool:
+               """
+               Implementation for DataFrame.equals
+               """
+               if not isinstance(other, DataManager):
+                   return False
+       
+               self_axes, other_axes = self.axes, other.axes
+               if len(self_axes) != len(other_axes):
+                   return False
+               if not all(ax1.equals(ax2) for ax1, ax2 in zip(self_axes, other_axes)):
+                   return False
+       
+               return self._equal_values(other)
+       
+    1:     def apply(
+               self: T,
+               f,
+               align_keys: list[str] | None = None,
+               ignore_failures: bool = False,
+               **kwargs,
+           ) -> T:
+               raise AbstractMethodError(self)
+       
+    1:     @final
+    1:     def isna(self: T, func) -> T:
+               return self.apply("apply", func=func)
+       
+           # --------------------------------------------------------------------
+           # Consolidation: No-ops for all but BlockManager
+       
+    1:     def is_consolidated(self) -> bool:
+               return True
+       
+    1:     def consolidate(self: T) -> T:
+               return self
+       
+    1:     def _consolidate_inplace(self) -> None:
+               return
+       
+       
+    2: class SingleDataManager(DataManager):
+    1:     ndim = 1
+       
+    1:     @final
+    1:     @property
+    1:     def array(self) -> ArrayLike:
+               """
+               Quick access to the backing array of the Block or SingleArrayManager.
+               """
+               # error: "SingleDataManager" has no attribute "arrays"; maybe "array"
+               return self.arrays[0]  # type: ignore[attr-defined]
+       
+    1:     def setitem_inplace(self, indexer, value) -> None:
+               """
+               Set values with indexer.
+       
+               For Single[Block/Array]Manager, this backs s[indexer] = value
+       
+               This is an inplace version of `setitem()`, mutating the manager/values
+               in place, not returning a new Manager (and Block), and thus never changing
+               the dtype.
+               """
+               arr = self.array
+       
+               # EAs will do this validation in their own __setitem__ methods.
+               if isinstance(arr, np.ndarray):
+                   # Note: checking for ndarray instead of np.dtype means we exclude
+                   #  dt64/td64, which do their own validation.
+                   value = np_can_hold_element(arr.dtype, value)
+       
+               arr[indexer] = value
+       
+    1:     def grouped_reduce(self, func, ignore_failures: bool = False):
+               """
+               ignore_failures : bool, default False
+                   Not used; for compatibility with ArrayManager/BlockManager.
+               """
+       
+               arr = self.array
+               res = func(arr)
+               index = default_index(len(res))
+       
+               mgr = type(self).from_array(res, index)
+               return mgr
+       
+    1:     @classmethod
+    1:     def from_array(cls, arr: ArrayLike, index: Index):
+               raise AbstractMethodError(cls)
+       
+       
+    1: def interleaved_dtype(dtypes: list[DtypeObj]) -> DtypeObj | None:
+           """
+           Find the common dtype for `blocks`.
+       
+           Parameters
+           ----------
+           blocks : List[DtypeObj]
+       
+           Returns
+           -------
+           dtype : np.dtype, ExtensionDtype, or None
+               None is returned when `blocks` is empty.
+           """
+    1:     if not len(dtypes):
+               return None
+       
+    1:     return find_common_type(dtypes)

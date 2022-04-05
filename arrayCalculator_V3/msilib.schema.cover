@@ -1,0 +1,1007 @@
+    1: from . import Table
+       
+    1: _Validation = Table('_Validation')
+    1: _Validation.add_field(1,'Table',11552)
+    1: _Validation.add_field(2,'Column',11552)
+    1: _Validation.add_field(3,'Nullable',3332)
+    1: _Validation.add_field(4,'MinValue',4356)
+    1: _Validation.add_field(5,'MaxValue',4356)
+    1: _Validation.add_field(6,'KeyTable',7679)
+    1: _Validation.add_field(7,'KeyColumn',5378)
+    1: _Validation.add_field(8,'Category',7456)
+    1: _Validation.add_field(9,'Set',7679)
+    1: _Validation.add_field(10,'Description',7679)
+       
+    1: ActionText = Table('ActionText')
+    1: ActionText.add_field(1,'Action',11592)
+    1: ActionText.add_field(2,'Description',7936)
+    1: ActionText.add_field(3,'Template',7936)
+       
+    1: AdminExecuteSequence = Table('AdminExecuteSequence')
+    1: AdminExecuteSequence.add_field(1,'Action',11592)
+    1: AdminExecuteSequence.add_field(2,'Condition',7679)
+    1: AdminExecuteSequence.add_field(3,'Sequence',5378)
+       
+    1: Condition = Table('Condition')
+    1: Condition.add_field(1,'Feature_',11558)
+    1: Condition.add_field(2,'Level',9474)
+    1: Condition.add_field(3,'Condition',7679)
+       
+    1: AdminUISequence = Table('AdminUISequence')
+    1: AdminUISequence.add_field(1,'Action',11592)
+    1: AdminUISequence.add_field(2,'Condition',7679)
+    1: AdminUISequence.add_field(3,'Sequence',5378)
+       
+    1: AdvtExecuteSequence = Table('AdvtExecuteSequence')
+    1: AdvtExecuteSequence.add_field(1,'Action',11592)
+    1: AdvtExecuteSequence.add_field(2,'Condition',7679)
+    1: AdvtExecuteSequence.add_field(3,'Sequence',5378)
+       
+    1: AdvtUISequence = Table('AdvtUISequence')
+    1: AdvtUISequence.add_field(1,'Action',11592)
+    1: AdvtUISequence.add_field(2,'Condition',7679)
+    1: AdvtUISequence.add_field(3,'Sequence',5378)
+       
+    1: AppId = Table('AppId')
+    1: AppId.add_field(1,'AppId',11558)
+    1: AppId.add_field(2,'RemoteServerName',7679)
+    1: AppId.add_field(3,'LocalService',7679)
+    1: AppId.add_field(4,'ServiceParameters',7679)
+    1: AppId.add_field(5,'DllSurrogate',7679)
+    1: AppId.add_field(6,'ActivateAtStorage',5378)
+    1: AppId.add_field(7,'RunAsInteractiveUser',5378)
+       
+    1: AppSearch = Table('AppSearch')
+    1: AppSearch.add_field(1,'Property',11592)
+    1: AppSearch.add_field(2,'Signature_',11592)
+       
+    1: Property = Table('Property')
+    1: Property.add_field(1,'Property',11592)
+    1: Property.add_field(2,'Value',3840)
+       
+    1: BBControl = Table('BBControl')
+    1: BBControl.add_field(1,'Billboard_',11570)
+    1: BBControl.add_field(2,'BBControl',11570)
+    1: BBControl.add_field(3,'Type',3378)
+    1: BBControl.add_field(4,'X',1282)
+    1: BBControl.add_field(5,'Y',1282)
+    1: BBControl.add_field(6,'Width',1282)
+    1: BBControl.add_field(7,'Height',1282)
+    1: BBControl.add_field(8,'Attributes',4356)
+    1: BBControl.add_field(9,'Text',7986)
+       
+    1: Billboard = Table('Billboard')
+    1: Billboard.add_field(1,'Billboard',11570)
+    1: Billboard.add_field(2,'Feature_',3366)
+    1: Billboard.add_field(3,'Action',7474)
+    1: Billboard.add_field(4,'Ordering',5378)
+       
+    1: Feature = Table('Feature')
+    1: Feature.add_field(1,'Feature',11558)
+    1: Feature.add_field(2,'Feature_Parent',7462)
+    1: Feature.add_field(3,'Title',8000)
+    1: Feature.add_field(4,'Description',8191)
+    1: Feature.add_field(5,'Display',5378)
+    1: Feature.add_field(6,'Level',1282)
+    1: Feature.add_field(7,'Directory_',7496)
+    1: Feature.add_field(8,'Attributes',1282)
+       
+    1: Binary = Table('Binary')
+    1: Binary.add_field(1,'Name',11592)
+    1: Binary.add_field(2,'Data',2304)
+       
+    1: BindImage = Table('BindImage')
+    1: BindImage.add_field(1,'File_',11592)
+    1: BindImage.add_field(2,'Path',7679)
+       
+    1: File = Table('File')
+    1: File.add_field(1,'File',11592)
+    1: File.add_field(2,'Component_',3400)
+    1: File.add_field(3,'FileName',4095)
+    1: File.add_field(4,'FileSize',260)
+    1: File.add_field(5,'Version',7496)
+    1: File.add_field(6,'Language',7444)
+    1: File.add_field(7,'Attributes',5378)
+    1: File.add_field(8,'Sequence',1282)
+       
+    1: CCPSearch = Table('CCPSearch')
+    1: CCPSearch.add_field(1,'Signature_',11592)
+       
+    1: CheckBox = Table('CheckBox')
+    1: CheckBox.add_field(1,'Property',11592)
+    1: CheckBox.add_field(2,'Value',7488)
+       
+    1: Class = Table('Class')
+    1: Class.add_field(1,'CLSID',11558)
+    1: Class.add_field(2,'Context',11552)
+    1: Class.add_field(3,'Component_',11592)
+    1: Class.add_field(4,'ProgId_Default',7679)
+    1: Class.add_field(5,'Description',8191)
+    1: Class.add_field(6,'AppId_',7462)
+    1: Class.add_field(7,'FileTypeMask',7679)
+    1: Class.add_field(8,'Icon_',7496)
+    1: Class.add_field(9,'IconIndex',5378)
+    1: Class.add_field(10,'DefInprocHandler',7456)
+    1: Class.add_field(11,'Argument',7679)
+    1: Class.add_field(12,'Feature_',3366)
+    1: Class.add_field(13,'Attributes',5378)
+       
+    1: Component = Table('Component')
+    1: Component.add_field(1,'Component',11592)
+    1: Component.add_field(2,'ComponentId',7462)
+    1: Component.add_field(3,'Directory_',3400)
+    1: Component.add_field(4,'Attributes',1282)
+    1: Component.add_field(5,'Condition',7679)
+    1: Component.add_field(6,'KeyPath',7496)
+       
+    1: Icon = Table('Icon')
+    1: Icon.add_field(1,'Name',11592)
+    1: Icon.add_field(2,'Data',2304)
+       
+    1: ProgId = Table('ProgId')
+    1: ProgId.add_field(1,'ProgId',11775)
+    1: ProgId.add_field(2,'ProgId_Parent',7679)
+    1: ProgId.add_field(3,'Class_',7462)
+    1: ProgId.add_field(4,'Description',8191)
+    1: ProgId.add_field(5,'Icon_',7496)
+    1: ProgId.add_field(6,'IconIndex',5378)
+       
+    1: ComboBox = Table('ComboBox')
+    1: ComboBox.add_field(1,'Property',11592)
+    1: ComboBox.add_field(2,'Order',9474)
+    1: ComboBox.add_field(3,'Value',3392)
+    1: ComboBox.add_field(4,'Text',8000)
+       
+    1: CompLocator = Table('CompLocator')
+    1: CompLocator.add_field(1,'Signature_',11592)
+    1: CompLocator.add_field(2,'ComponentId',3366)
+    1: CompLocator.add_field(3,'Type',5378)
+       
+    1: Complus = Table('Complus')
+    1: Complus.add_field(1,'Component_',11592)
+    1: Complus.add_field(2,'ExpType',13570)
+       
+    1: Directory = Table('Directory')
+    1: Directory.add_field(1,'Directory',11592)
+    1: Directory.add_field(2,'Directory_Parent',7496)
+    1: Directory.add_field(3,'DefaultDir',4095)
+       
+    1: Control = Table('Control')
+    1: Control.add_field(1,'Dialog_',11592)
+    1: Control.add_field(2,'Control',11570)
+    1: Control.add_field(3,'Type',3348)
+    1: Control.add_field(4,'X',1282)
+    1: Control.add_field(5,'Y',1282)
+    1: Control.add_field(6,'Width',1282)
+    1: Control.add_field(7,'Height',1282)
+    1: Control.add_field(8,'Attributes',4356)
+    1: Control.add_field(9,'Property',7474)
+    1: Control.add_field(10,'Text',7936)
+    1: Control.add_field(11,'Control_Next',7474)
+    1: Control.add_field(12,'Help',7986)
+       
+    1: Dialog = Table('Dialog')
+    1: Dialog.add_field(1,'Dialog',11592)
+    1: Dialog.add_field(2,'HCentering',1282)
+    1: Dialog.add_field(3,'VCentering',1282)
+    1: Dialog.add_field(4,'Width',1282)
+    1: Dialog.add_field(5,'Height',1282)
+    1: Dialog.add_field(6,'Attributes',4356)
+    1: Dialog.add_field(7,'Title',8064)
+    1: Dialog.add_field(8,'Control_First',3378)
+    1: Dialog.add_field(9,'Control_Default',7474)
+    1: Dialog.add_field(10,'Control_Cancel',7474)
+       
+    1: ControlCondition = Table('ControlCondition')
+    1: ControlCondition.add_field(1,'Dialog_',11592)
+    1: ControlCondition.add_field(2,'Control_',11570)
+    1: ControlCondition.add_field(3,'Action',11570)
+    1: ControlCondition.add_field(4,'Condition',11775)
+       
+    1: ControlEvent = Table('ControlEvent')
+    1: ControlEvent.add_field(1,'Dialog_',11592)
+    1: ControlEvent.add_field(2,'Control_',11570)
+    1: ControlEvent.add_field(3,'Event',11570)
+    1: ControlEvent.add_field(4,'Argument',11775)
+    1: ControlEvent.add_field(5,'Condition',15871)
+    1: ControlEvent.add_field(6,'Ordering',5378)
+       
+    1: CreateFolder = Table('CreateFolder')
+    1: CreateFolder.add_field(1,'Directory_',11592)
+    1: CreateFolder.add_field(2,'Component_',11592)
+       
+    1: CustomAction = Table('CustomAction')
+    1: CustomAction.add_field(1,'Action',11592)
+    1: CustomAction.add_field(2,'Type',1282)
+    1: CustomAction.add_field(3,'Source',7496)
+    1: CustomAction.add_field(4,'Target',7679)
+       
+    1: DrLocator = Table('DrLocator')
+    1: DrLocator.add_field(1,'Signature_',11592)
+    1: DrLocator.add_field(2,'Parent',15688)
+    1: DrLocator.add_field(3,'Path',15871)
+    1: DrLocator.add_field(4,'Depth',5378)
+       
+    1: DuplicateFile = Table('DuplicateFile')
+    1: DuplicateFile.add_field(1,'FileKey',11592)
+    1: DuplicateFile.add_field(2,'Component_',3400)
+    1: DuplicateFile.add_field(3,'File_',3400)
+    1: DuplicateFile.add_field(4,'DestName',8191)
+    1: DuplicateFile.add_field(5,'DestFolder',7496)
+       
+    1: Environment = Table('Environment')
+    1: Environment.add_field(1,'Environment',11592)
+    1: Environment.add_field(2,'Name',4095)
+    1: Environment.add_field(3,'Value',8191)
+    1: Environment.add_field(4,'Component_',3400)
+       
+    1: Error = Table('Error')
+    1: Error.add_field(1,'Error',9474)
+    1: Error.add_field(2,'Message',7936)
+       
+    1: EventMapping = Table('EventMapping')
+    1: EventMapping.add_field(1,'Dialog_',11592)
+    1: EventMapping.add_field(2,'Control_',11570)
+    1: EventMapping.add_field(3,'Event',11570)
+    1: EventMapping.add_field(4,'Attribute',3378)
+       
+    1: Extension = Table('Extension')
+    1: Extension.add_field(1,'Extension',11775)
+    1: Extension.add_field(2,'Component_',11592)
+    1: Extension.add_field(3,'ProgId_',7679)
+    1: Extension.add_field(4,'MIME_',7488)
+    1: Extension.add_field(5,'Feature_',3366)
+       
+    1: MIME = Table('MIME')
+    1: MIME.add_field(1,'ContentType',11584)
+    1: MIME.add_field(2,'Extension_',3583)
+    1: MIME.add_field(3,'CLSID',7462)
+       
+    1: FeatureComponents = Table('FeatureComponents')
+    1: FeatureComponents.add_field(1,'Feature_',11558)
+    1: FeatureComponents.add_field(2,'Component_',11592)
+       
+    1: FileSFPCatalog = Table('FileSFPCatalog')
+    1: FileSFPCatalog.add_field(1,'File_',11592)
+    1: FileSFPCatalog.add_field(2,'SFPCatalog_',11775)
+       
+    1: SFPCatalog = Table('SFPCatalog')
+    1: SFPCatalog.add_field(1,'SFPCatalog',11775)
+    1: SFPCatalog.add_field(2,'Catalog',2304)
+    1: SFPCatalog.add_field(3,'Dependency',7424)
+       
+    1: Font = Table('Font')
+    1: Font.add_field(1,'File_',11592)
+    1: Font.add_field(2,'FontTitle',7552)
+       
+    1: IniFile = Table('IniFile')
+    1: IniFile.add_field(1,'IniFile',11592)
+    1: IniFile.add_field(2,'FileName',4095)
+    1: IniFile.add_field(3,'DirProperty',7496)
+    1: IniFile.add_field(4,'Section',3936)
+    1: IniFile.add_field(5,'Key',3968)
+    1: IniFile.add_field(6,'Value',4095)
+    1: IniFile.add_field(7,'Action',1282)
+    1: IniFile.add_field(8,'Component_',3400)
+       
+    1: IniLocator = Table('IniLocator')
+    1: IniLocator.add_field(1,'Signature_',11592)
+    1: IniLocator.add_field(2,'FileName',3583)
+    1: IniLocator.add_field(3,'Section',3424)
+    1: IniLocator.add_field(4,'Key',3456)
+    1: IniLocator.add_field(5,'Field',5378)
+    1: IniLocator.add_field(6,'Type',5378)
+       
+    1: InstallExecuteSequence = Table('InstallExecuteSequence')
+    1: InstallExecuteSequence.add_field(1,'Action',11592)
+    1: InstallExecuteSequence.add_field(2,'Condition',7679)
+    1: InstallExecuteSequence.add_field(3,'Sequence',5378)
+       
+    1: InstallUISequence = Table('InstallUISequence')
+    1: InstallUISequence.add_field(1,'Action',11592)
+    1: InstallUISequence.add_field(2,'Condition',7679)
+    1: InstallUISequence.add_field(3,'Sequence',5378)
+       
+    1: IsolatedComponent = Table('IsolatedComponent')
+    1: IsolatedComponent.add_field(1,'Component_Shared',11592)
+    1: IsolatedComponent.add_field(2,'Component_Application',11592)
+       
+    1: LaunchCondition = Table('LaunchCondition')
+    1: LaunchCondition.add_field(1,'Condition',11775)
+    1: LaunchCondition.add_field(2,'Description',4095)
+       
+    1: ListBox = Table('ListBox')
+    1: ListBox.add_field(1,'Property',11592)
+    1: ListBox.add_field(2,'Order',9474)
+    1: ListBox.add_field(3,'Value',3392)
+    1: ListBox.add_field(4,'Text',8000)
+       
+    1: ListView = Table('ListView')
+    1: ListView.add_field(1,'Property',11592)
+    1: ListView.add_field(2,'Order',9474)
+    1: ListView.add_field(3,'Value',3392)
+    1: ListView.add_field(4,'Text',8000)
+    1: ListView.add_field(5,'Binary_',7496)
+       
+    1: LockPermissions = Table('LockPermissions')
+    1: LockPermissions.add_field(1,'LockObject',11592)
+    1: LockPermissions.add_field(2,'Table',11552)
+    1: LockPermissions.add_field(3,'Domain',15871)
+    1: LockPermissions.add_field(4,'User',11775)
+    1: LockPermissions.add_field(5,'Permission',4356)
+       
+    1: Media = Table('Media')
+    1: Media.add_field(1,'DiskId',9474)
+    1: Media.add_field(2,'LastSequence',1282)
+    1: Media.add_field(3,'DiskPrompt',8000)
+    1: Media.add_field(4,'Cabinet',7679)
+    1: Media.add_field(5,'VolumeLabel',7456)
+    1: Media.add_field(6,'Source',7496)
+       
+    1: MoveFile = Table('MoveFile')
+    1: MoveFile.add_field(1,'FileKey',11592)
+    1: MoveFile.add_field(2,'Component_',3400)
+    1: MoveFile.add_field(3,'SourceName',8191)
+    1: MoveFile.add_field(4,'DestName',8191)
+    1: MoveFile.add_field(5,'SourceFolder',7496)
+    1: MoveFile.add_field(6,'DestFolder',3400)
+    1: MoveFile.add_field(7,'Options',1282)
+       
+    1: MsiAssembly = Table('MsiAssembly')
+    1: MsiAssembly.add_field(1,'Component_',11592)
+    1: MsiAssembly.add_field(2,'Feature_',3366)
+    1: MsiAssembly.add_field(3,'File_Manifest',7496)
+    1: MsiAssembly.add_field(4,'File_Application',7496)
+    1: MsiAssembly.add_field(5,'Attributes',5378)
+       
+    1: MsiAssemblyName = Table('MsiAssemblyName')
+    1: MsiAssemblyName.add_field(1,'Component_',11592)
+    1: MsiAssemblyName.add_field(2,'Name',11775)
+    1: MsiAssemblyName.add_field(3,'Value',3583)
+       
+    1: MsiDigitalCertificate = Table('MsiDigitalCertificate')
+    1: MsiDigitalCertificate.add_field(1,'DigitalCertificate',11592)
+    1: MsiDigitalCertificate.add_field(2,'CertData',2304)
+       
+    1: MsiDigitalSignature = Table('MsiDigitalSignature')
+    1: MsiDigitalSignature.add_field(1,'Table',11552)
+    1: MsiDigitalSignature.add_field(2,'SignObject',11592)
+    1: MsiDigitalSignature.add_field(3,'DigitalCertificate_',3400)
+    1: MsiDigitalSignature.add_field(4,'Hash',6400)
+       
+    1: MsiFileHash = Table('MsiFileHash')
+    1: MsiFileHash.add_field(1,'File_',11592)
+    1: MsiFileHash.add_field(2,'Options',1282)
+    1: MsiFileHash.add_field(3,'HashPart1',260)
+    1: MsiFileHash.add_field(4,'HashPart2',260)
+    1: MsiFileHash.add_field(5,'HashPart3',260)
+    1: MsiFileHash.add_field(6,'HashPart4',260)
+       
+    1: MsiPatchHeaders = Table('MsiPatchHeaders')
+    1: MsiPatchHeaders.add_field(1,'StreamRef',11558)
+    1: MsiPatchHeaders.add_field(2,'Header',2304)
+       
+    1: ODBCAttribute = Table('ODBCAttribute')
+    1: ODBCAttribute.add_field(1,'Driver_',11592)
+    1: ODBCAttribute.add_field(2,'Attribute',11560)
+    1: ODBCAttribute.add_field(3,'Value',8191)
+       
+    1: ODBCDriver = Table('ODBCDriver')
+    1: ODBCDriver.add_field(1,'Driver',11592)
+    1: ODBCDriver.add_field(2,'Component_',3400)
+    1: ODBCDriver.add_field(3,'Description',3583)
+    1: ODBCDriver.add_field(4,'File_',3400)
+    1: ODBCDriver.add_field(5,'File_Setup',7496)
+       
+    1: ODBCDataSource = Table('ODBCDataSource')
+    1: ODBCDataSource.add_field(1,'DataSource',11592)
+    1: ODBCDataSource.add_field(2,'Component_',3400)
+    1: ODBCDataSource.add_field(3,'Description',3583)
+    1: ODBCDataSource.add_field(4,'DriverDescription',3583)
+    1: ODBCDataSource.add_field(5,'Registration',1282)
+       
+    1: ODBCSourceAttribute = Table('ODBCSourceAttribute')
+    1: ODBCSourceAttribute.add_field(1,'DataSource_',11592)
+    1: ODBCSourceAttribute.add_field(2,'Attribute',11552)
+    1: ODBCSourceAttribute.add_field(3,'Value',8191)
+       
+    1: ODBCTranslator = Table('ODBCTranslator')
+    1: ODBCTranslator.add_field(1,'Translator',11592)
+    1: ODBCTranslator.add_field(2,'Component_',3400)
+    1: ODBCTranslator.add_field(3,'Description',3583)
+    1: ODBCTranslator.add_field(4,'File_',3400)
+    1: ODBCTranslator.add_field(5,'File_Setup',7496)
+       
+    1: Patch = Table('Patch')
+    1: Patch.add_field(1,'File_',11592)
+    1: Patch.add_field(2,'Sequence',9474)
+    1: Patch.add_field(3,'PatchSize',260)
+    1: Patch.add_field(4,'Attributes',1282)
+    1: Patch.add_field(5,'Header',6400)
+    1: Patch.add_field(6,'StreamRef_',7462)
+       
+    1: PatchPackage = Table('PatchPackage')
+    1: PatchPackage.add_field(1,'PatchId',11558)
+    1: PatchPackage.add_field(2,'Media_',1282)
+       
+    1: PublishComponent = Table('PublishComponent')
+    1: PublishComponent.add_field(1,'ComponentId',11558)
+    1: PublishComponent.add_field(2,'Qualifier',11775)
+    1: PublishComponent.add_field(3,'Component_',11592)
+    1: PublishComponent.add_field(4,'AppData',8191)
+    1: PublishComponent.add_field(5,'Feature_',3366)
+       
+    1: RadioButton = Table('RadioButton')
+    1: RadioButton.add_field(1,'Property',11592)
+    1: RadioButton.add_field(2,'Order',9474)
+    1: RadioButton.add_field(3,'Value',3392)
+    1: RadioButton.add_field(4,'X',1282)
+    1: RadioButton.add_field(5,'Y',1282)
+    1: RadioButton.add_field(6,'Width',1282)
+    1: RadioButton.add_field(7,'Height',1282)
+    1: RadioButton.add_field(8,'Text',8000)
+    1: RadioButton.add_field(9,'Help',7986)
+       
+    1: Registry = Table('Registry')
+    1: Registry.add_field(1,'Registry',11592)
+    1: Registry.add_field(2,'Root',1282)
+    1: Registry.add_field(3,'Key',4095)
+    1: Registry.add_field(4,'Name',8191)
+    1: Registry.add_field(5,'Value',7936)
+    1: Registry.add_field(6,'Component_',3400)
+       
+    1: RegLocator = Table('RegLocator')
+    1: RegLocator.add_field(1,'Signature_',11592)
+    1: RegLocator.add_field(2,'Root',1282)
+    1: RegLocator.add_field(3,'Key',3583)
+    1: RegLocator.add_field(4,'Name',7679)
+    1: RegLocator.add_field(5,'Type',5378)
+       
+    1: RemoveFile = Table('RemoveFile')
+    1: RemoveFile.add_field(1,'FileKey',11592)
+    1: RemoveFile.add_field(2,'Component_',3400)
+    1: RemoveFile.add_field(3,'FileName',8191)
+    1: RemoveFile.add_field(4,'DirProperty',3400)
+    1: RemoveFile.add_field(5,'InstallMode',1282)
+       
+    1: RemoveIniFile = Table('RemoveIniFile')
+    1: RemoveIniFile.add_field(1,'RemoveIniFile',11592)
+    1: RemoveIniFile.add_field(2,'FileName',4095)
+    1: RemoveIniFile.add_field(3,'DirProperty',7496)
+    1: RemoveIniFile.add_field(4,'Section',3936)
+    1: RemoveIniFile.add_field(5,'Key',3968)
+    1: RemoveIniFile.add_field(6,'Value',8191)
+    1: RemoveIniFile.add_field(7,'Action',1282)
+    1: RemoveIniFile.add_field(8,'Component_',3400)
+       
+    1: RemoveRegistry = Table('RemoveRegistry')
+    1: RemoveRegistry.add_field(1,'RemoveRegistry',11592)
+    1: RemoveRegistry.add_field(2,'Root',1282)
+    1: RemoveRegistry.add_field(3,'Key',4095)
+    1: RemoveRegistry.add_field(4,'Name',8191)
+    1: RemoveRegistry.add_field(5,'Component_',3400)
+       
+    1: ReserveCost = Table('ReserveCost')
+    1: ReserveCost.add_field(1,'ReserveKey',11592)
+    1: ReserveCost.add_field(2,'Component_',3400)
+    1: ReserveCost.add_field(3,'ReserveFolder',7496)
+    1: ReserveCost.add_field(4,'ReserveLocal',260)
+    1: ReserveCost.add_field(5,'ReserveSource',260)
+       
+    1: SelfReg = Table('SelfReg')
+    1: SelfReg.add_field(1,'File_',11592)
+    1: SelfReg.add_field(2,'Cost',5378)
+       
+    1: ServiceControl = Table('ServiceControl')
+    1: ServiceControl.add_field(1,'ServiceControl',11592)
+    1: ServiceControl.add_field(2,'Name',4095)
+    1: ServiceControl.add_field(3,'Event',1282)
+    1: ServiceControl.add_field(4,'Arguments',8191)
+    1: ServiceControl.add_field(5,'Wait',5378)
+    1: ServiceControl.add_field(6,'Component_',3400)
+       
+    1: ServiceInstall = Table('ServiceInstall')
+    1: ServiceInstall.add_field(1,'ServiceInstall',11592)
+    1: ServiceInstall.add_field(2,'Name',3583)
+    1: ServiceInstall.add_field(3,'DisplayName',8191)
+    1: ServiceInstall.add_field(4,'ServiceType',260)
+    1: ServiceInstall.add_field(5,'StartType',260)
+    1: ServiceInstall.add_field(6,'ErrorControl',260)
+    1: ServiceInstall.add_field(7,'LoadOrderGroup',7679)
+    1: ServiceInstall.add_field(8,'Dependencies',7679)
+    1: ServiceInstall.add_field(9,'StartName',7679)
+    1: ServiceInstall.add_field(10,'Password',7679)
+    1: ServiceInstall.add_field(11,'Arguments',7679)
+    1: ServiceInstall.add_field(12,'Component_',3400)
+    1: ServiceInstall.add_field(13,'Description',8191)
+       
+    1: Shortcut = Table('Shortcut')
+    1: Shortcut.add_field(1,'Shortcut',11592)
+    1: Shortcut.add_field(2,'Directory_',3400)
+    1: Shortcut.add_field(3,'Name',3968)
+    1: Shortcut.add_field(4,'Component_',3400)
+    1: Shortcut.add_field(5,'Target',3400)
+    1: Shortcut.add_field(6,'Arguments',7679)
+    1: Shortcut.add_field(7,'Description',8191)
+    1: Shortcut.add_field(8,'Hotkey',5378)
+    1: Shortcut.add_field(9,'Icon_',7496)
+    1: Shortcut.add_field(10,'IconIndex',5378)
+    1: Shortcut.add_field(11,'ShowCmd',5378)
+    1: Shortcut.add_field(12,'WkDir',7496)
+       
+    1: Signature = Table('Signature')
+    1: Signature.add_field(1,'Signature',11592)
+    1: Signature.add_field(2,'FileName',3583)
+    1: Signature.add_field(3,'MinVersion',7444)
+    1: Signature.add_field(4,'MaxVersion',7444)
+    1: Signature.add_field(5,'MinSize',4356)
+    1: Signature.add_field(6,'MaxSize',4356)
+    1: Signature.add_field(7,'MinDate',4356)
+    1: Signature.add_field(8,'MaxDate',4356)
+    1: Signature.add_field(9,'Languages',7679)
+       
+    1: TextStyle = Table('TextStyle')
+    1: TextStyle.add_field(1,'TextStyle',11592)
+    1: TextStyle.add_field(2,'FaceName',3360)
+    1: TextStyle.add_field(3,'Size',1282)
+    1: TextStyle.add_field(4,'Color',4356)
+    1: TextStyle.add_field(5,'StyleBits',5378)
+       
+    1: TypeLib = Table('TypeLib')
+    1: TypeLib.add_field(1,'LibID',11558)
+    1: TypeLib.add_field(2,'Language',9474)
+    1: TypeLib.add_field(3,'Component_',11592)
+    1: TypeLib.add_field(4,'Version',4356)
+    1: TypeLib.add_field(5,'Description',8064)
+    1: TypeLib.add_field(6,'Directory_',7496)
+    1: TypeLib.add_field(7,'Feature_',3366)
+    1: TypeLib.add_field(8,'Cost',4356)
+       
+    1: UIText = Table('UIText')
+    1: UIText.add_field(1,'Key',11592)
+    1: UIText.add_field(2,'Text',8191)
+       
+    1: Upgrade = Table('Upgrade')
+    1: Upgrade.add_field(1,'UpgradeCode',11558)
+    1: Upgrade.add_field(2,'VersionMin',15636)
+    1: Upgrade.add_field(3,'VersionMax',15636)
+    1: Upgrade.add_field(4,'Language',15871)
+    1: Upgrade.add_field(5,'Attributes',8452)
+    1: Upgrade.add_field(6,'Remove',7679)
+    1: Upgrade.add_field(7,'ActionProperty',3400)
+       
+    1: Verb = Table('Verb')
+    1: Verb.add_field(1,'Extension_',11775)
+    1: Verb.add_field(2,'Verb',11552)
+    1: Verb.add_field(3,'Sequence',5378)
+    1: Verb.add_field(4,'Command',8191)
+    1: Verb.add_field(5,'Argument',8191)
+       
+    1: tables=[_Validation, ActionText, AdminExecuteSequence, Condition, AdminUISequence, AdvtExecuteSequence, AdvtUISequence, AppId, AppSearch, Property, BBControl, Billboard, Feature, Binary, BindImage, File, CCPSearch, CheckBox, Class, Component, Icon, ProgId, ComboBox, CompLocator, Complus, Directory, Control, Dialog, ControlCondition, ControlEvent, CreateFolder, CustomAction, DrLocator, DuplicateFile, Environment, Error, EventMapping, Extension, MIME, FeatureComponents, FileSFPCatalog, SFPCatalog, Font, IniFile, IniLocator, InstallExecuteSequence, InstallUISequence, IsolatedComponent, LaunchCondition, ListBox, ListView, LockPermissions, Media, MoveFile, MsiAssembly, MsiAssemblyName, MsiDigitalCertificate, MsiDigitalSignature, MsiFileHash, MsiPatchHeaders, ODBCAttribute, ODBCDriver, ODBCDataSource, ODBCSourceAttribute, ODBCTranslator, Patch, PatchPackage, PublishComponent, RadioButton, Registry, RegLocator, RemoveFile, RemoveIniFile, RemoveRegistry, ReserveCost, SelfReg, ServiceControl, ServiceInstall, Shortcut, Signature, TextStyle, TypeLib, UIText, Upgrade, Verb]
+       
+    1: _Validation_records = [
+    1: ('_Validation','Table','N',None, None, None, None, 'Identifier',None, 'Name of table',),
+    1: ('_Validation','Column','N',None, None, None, None, 'Identifier',None, 'Name of column',),
+    1: ('_Validation','Description','Y',None, None, None, None, 'Text',None, 'Description of column',),
+    1: ('_Validation','Set','Y',None, None, None, None, 'Text',None, 'Set of values that are permitted',),
+    1: ('_Validation','Category','Y',None, None, None, None, None, 'Text;Formatted;Template;Condition;Guid;Path;Version;Language;Identifier;Binary;UpperCase;LowerCase;Filename;Paths;AnyPath;WildCardFilename;RegPath;KeyFormatted;CustomSource;Property;Cabinet;Shortcut;URL','String category',),
+    1: ('_Validation','KeyColumn','Y',1,32,None, None, None, None, 'Column to which foreign key connects',),
+    1: ('_Validation','KeyTable','Y',None, None, None, None, 'Identifier',None, 'For foreign key, Name of table to which data must link',),
+    1: ('_Validation','MaxValue','Y',-2147483647,2147483647,None, None, None, None, 'Maximum value allowed',),
+    1: ('_Validation','MinValue','Y',-2147483647,2147483647,None, None, None, None, 'Minimum value allowed',),
+    1: ('_Validation','Nullable','N',None, None, None, None, None, 'Y;N;@','Whether the column is nullable',),
+    1: ('ActionText','Description','Y',None, None, None, None, 'Text',None, 'Localized description displayed in progress dialog and log when action is executing.',),
+    1: ('ActionText','Action','N',None, None, None, None, 'Identifier',None, 'Name of action to be described.',),
+    1: ('ActionText','Template','Y',None, None, None, None, 'Template',None, 'Optional localized format template used to format action data records for display during action execution.',),
+    1: ('AdminExecuteSequence','Action','N',None, None, None, None, 'Identifier',None, 'Name of action to invoke, either in the engine or the handler DLL.',),
+    1: ('AdminExecuteSequence','Condition','Y',None, None, None, None, 'Condition',None, 'Optional expression which skips the action if evaluates to expFalse.If the expression syntax is invalid, the engine will terminate, returning iesBadActionData.',),
+    1: ('AdminExecuteSequence','Sequence','Y',-4,32767,None, None, None, None, 'Number that determines the sort order in which the actions are to be executed.  Leave blank to suppress action.',),
+    1: ('Condition','Condition','Y',None, None, None, None, 'Condition',None, 'Expression evaluated to determine if Level in the Feature table is to change.',),
+    1: ('Condition','Feature_','N',None, None, 'Feature',1,'Identifier',None, 'Reference to a Feature entry in Feature table.',),
+    1: ('Condition','Level','N',0,32767,None, None, None, None, 'New selection Level to set in Feature table if Condition evaluates to TRUE.',),
+    1: ('AdminUISequence','Action','N',None, None, None, None, 'Identifier',None, 'Name of action to invoke, either in the engine or the handler DLL.',),
+    1: ('AdminUISequence','Condition','Y',None, None, None, None, 'Condition',None, 'Optional expression which skips the action if evaluates to expFalse.If the expression syntax is invalid, the engine will terminate, returning iesBadActionData.',),
+    1: ('AdminUISequence','Sequence','Y',-4,32767,None, None, None, None, 'Number that determines the sort order in which the actions are to be executed.  Leave blank to suppress action.',),
+    1: ('AdvtExecuteSequence','Action','N',None, None, None, None, 'Identifier',None, 'Name of action to invoke, either in the engine or the handler DLL.',),
+    1: ('AdvtExecuteSequence','Condition','Y',None, None, None, None, 'Condition',None, 'Optional expression which skips the action if evaluates to expFalse.If the expression syntax is invalid, the engine will terminate, returning iesBadActionData.',),
+    1: ('AdvtExecuteSequence','Sequence','Y',-4,32767,None, None, None, None, 'Number that determines the sort order in which the actions are to be executed.  Leave blank to suppress action.',),
+    1: ('AdvtUISequence','Action','N',None, None, None, None, 'Identifier',None, 'Name of action to invoke, either in the engine or the handler DLL.',),
+    1: ('AdvtUISequence','Condition','Y',None, None, None, None, 'Condition',None, 'Optional expression which skips the action if evaluates to expFalse.If the expression syntax is invalid, the engine will terminate, returning iesBadActionData.',),
+    1: ('AdvtUISequence','Sequence','Y',-4,32767,None, None, None, None, 'Number that determines the sort order in which the actions are to be executed.  Leave blank to suppress action.',),
+    1: ('AppId','AppId','N',None, None, None, None, 'Guid',None, None, ),
+    1: ('AppId','ActivateAtStorage','Y',0,1,None, None, None, None, None, ),
+    1: ('AppId','DllSurrogate','Y',None, None, None, None, 'Text',None, None, ),
+    1: ('AppId','LocalService','Y',None, None, None, None, 'Text',None, None, ),
+    1: ('AppId','RemoteServerName','Y',None, None, None, None, 'Formatted',None, None, ),
+    1: ('AppId','RunAsInteractiveUser','Y',0,1,None, None, None, None, None, ),
+    1: ('AppId','ServiceParameters','Y',None, None, None, None, 'Text',None, None, ),
+    1: ('AppSearch','Property','N',None, None, None, None, 'Identifier',None, 'The property associated with a Signature',),
+    1: ('AppSearch','Signature_','N',None, None, 'Signature;RegLocator;IniLocator;DrLocator;CompLocator',1,'Identifier',None, 'The Signature_ represents a unique file signature and is also the foreign key in the Signature,  RegLocator, IniLocator, CompLocator and the DrLocator tables.',),
+    1: ('Property','Property','N',None, None, None, None, 'Identifier',None, 'Name of property, uppercase if settable by launcher or loader.',),
+    1: ('Property','Value','N',None, None, None, None, 'Text',None, 'String value for property.  Never null or empty.',),
+    1: ('BBControl','Type','N',None, None, None, None, 'Identifier',None, 'The type of the control.',),
+    1: ('BBControl','Y','N',0,32767,None, None, None, None, 'Vertical coordinate of the upper left corner of the bounding rectangle of the control.',),
+    1: ('BBControl','Text','Y',None, None, None, None, 'Text',None, 'A string used to set the initial text contained within a control (if appropriate).',),
+    1: ('BBControl','BBControl','N',None, None, None, None, 'Identifier',None, 'Name of the control. This name must be unique within a billboard, but can repeat on different billboard.',),
+    1: ('BBControl','Attributes','Y',0,2147483647,None, None, None, None, 'A 32-bit word that specifies the attribute flags to be applied to this control.',),
+    1: ('BBControl','Billboard_','N',None, None, 'Billboard',1,'Identifier',None, 'External key to the Billboard table, name of the billboard.',),
+    1: ('BBControl','Height','N',0,32767,None, None, None, None, 'Height of the bounding rectangle of the control.',),
+    1: ('BBControl','Width','N',0,32767,None, None, None, None, 'Width of the bounding rectangle of the control.',),
+    1: ('BBControl','X','N',0,32767,None, None, None, None, 'Horizontal coordinate of the upper left corner of the bounding rectangle of the control.',),
+    1: ('Billboard','Action','Y',None, None, None, None, 'Identifier',None, 'The name of an action. The billboard is displayed during the progress messages received from this action.',),
+    1: ('Billboard','Billboard','N',None, None, None, None, 'Identifier',None, 'Name of the billboard.',),
+    1: ('Billboard','Feature_','N',None, None, 'Feature',1,'Identifier',None, 'An external key to the Feature Table. The billboard is shown only if this feature is being installed.',),
+    1: ('Billboard','Ordering','Y',0,32767,None, None, None, None, 'A positive integer. If there is more than one billboard corresponding to an action they will be shown in the order defined by this column.',),
+    1: ('Feature','Description','Y',None, None, None, None, 'Text',None, 'Longer descriptive text describing a visible feature item.',),
+    1: ('Feature','Attributes','N',None, None, None, None, None, '0;1;2;4;5;6;8;9;10;16;17;18;20;21;22;24;25;26;32;33;34;36;37;38;48;49;50;52;53;54','Feature attributes',),
+    1: ('Feature','Feature','N',None, None, None, None, 'Identifier',None, 'Primary key used to identify a particular feature record.',),
+    1: ('Feature','Directory_','Y',None, None, 'Directory',1,'UpperCase',None, 'The name of the Directory that can be configured by the UI. A non-null value will enable the browse button.',),
+    1: ('Feature','Level','N',0,32767,None, None, None, None, 'The install level at which record will be initially selected. An install level of 0 will disable an item and prevent its display.',),
+    1: ('Feature','Title','Y',None, None, None, None, 'Text',None, 'Short text identifying a visible feature item.',),
+    1: ('Feature','Display','Y',0,32767,None, None, None, None, 'Numeric sort order, used to force a specific display ordering.',),
+    1: ('Feature','Feature_Parent','Y',None, None, 'Feature',1,'Identifier',None, 'Optional key of a parent record in the same table. If the parent is not selected, then the record will not be installed. Null indicates a root item.',),
+    1: ('Binary','Name','N',None, None, None, None, 'Identifier',None, 'Unique key identifying the binary data.',),
+    1: ('Binary','Data','N',None, None, None, None, 'Binary',None, 'The unformatted binary data.',),
+    1: ('BindImage','File_','N',None, None, 'File',1,'Identifier',None, 'The index into the File table. This must be an executable file.',),
+    1: ('BindImage','Path','Y',None, None, None, None, 'Paths',None, 'A list of ;  delimited paths that represent the paths to be searched for the import DLLS. The list is usually a list of properties each enclosed within square brackets [] .',),
+    1: ('File','Sequence','N',1,32767,None, None, None, None, 'Sequence with respect to the media images; order must track cabinet order.',),
+    1: ('File','Attributes','Y',0,32767,None, None, None, None, 'Integer containing bit flags representing file attributes (with the decimal value of each bit position in parentheses)',),
+    1: ('File','File','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized token, must match identifier in cabinet.  For uncompressed files, this field is ignored.',),
+    1: ('File','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key referencing Component that controls the file.',),
+    1: ('File','FileName','N',None, None, None, None, 'Filename',None, 'File name used for installation, may be localized.  This may contain a "short name|long name" pair.',),
+    1: ('File','FileSize','N',0,2147483647,None, None, None, None, 'Size of file in bytes (integer).',),
+    1: ('File','Language','Y',None, None, None, None, 'Language',None, 'List of decimal language Ids, comma-separated if more than one.',),
+    1: ('File','Version','Y',None, None, 'File',1,'Version',None, 'Version string for versioned files;  Blank for unversioned files.',),
+    1: ('CCPSearch','Signature_','N',None, None, 'Signature;RegLocator;IniLocator;DrLocator;CompLocator',1,'Identifier',None, 'The Signature_ represents a unique file signature and is also the foreign key in the Signature,  RegLocator, IniLocator, CompLocator and the DrLocator tables.',),
+    1: ('CheckBox','Property','N',None, None, None, None, 'Identifier',None, 'A named property to be tied to the item.',),
+    1: ('CheckBox','Value','Y',None, None, None, None, 'Formatted',None, 'The value string associated with the item.',),
+    1: ('Class','Description','Y',None, None, None, None, 'Text',None, 'Localized description for the Class.',),
+    1: ('Class','Attributes','Y',None, 32767,None, None, None, None, 'Class registration attributes.',),
+    1: ('Class','Feature_','N',None, None, 'Feature',1,'Identifier',None, 'Required foreign key into the Feature Table, specifying the feature to validate or install in order for the CLSID factory to be operational.',),
+    1: ('Class','AppId_','Y',None, None, 'AppId',1,'Guid',None, 'Optional AppID containing DCOM information for associated application (string GUID).',),
+    1: ('Class','Argument','Y',None, None, None, None, 'Formatted',None, 'optional argument for LocalServers.',),
+    1: ('Class','CLSID','N',None, None, None, None, 'Guid',None, 'The CLSID of an OLE factory.',),
+    1: ('Class','Component_','N',None, None, 'Component',1,'Identifier',None, 'Required foreign key into the Component Table, specifying the component for which to return a path when called through LocateComponent.',),
+    1: ('Class','Context','N',None, None, None, None, 'Identifier',None, 'The numeric server context for this server. CLSCTX_xxxx',),
+    1: ('Class','DefInprocHandler','Y',None, None, None, None, 'Filename','1;2;3','Optional default inproc handler.  Only optionally provided if Context=CLSCTX_LOCAL_SERVER.  Typically "ole32.dll" or "mapi32.dll"',),
+    1: ('Class','FileTypeMask','Y',None, None, None, None, 'Text',None, 'Optional string containing information for the HKCRthis CLSID) key. If multiple patterns exist, they must be delimited by a semicolon, and numeric subkeys will be generated: 0,1,2...',),
+    1: ('Class','Icon_','Y',None, None, 'Icon',1,'Identifier',None, 'Optional foreign key into the Icon Table, specifying the icon file associated with this CLSID. Will be written under the DefaultIcon key.',),
+    1: ('Class','IconIndex','Y',-32767,32767,None, None, None, None, 'Optional icon index.',),
+    1: ('Class','ProgId_Default','Y',None, None, 'ProgId',1,'Text',None, 'Optional ProgId associated with this CLSID.',),
+    1: ('Component','Condition','Y',None, None, None, None, 'Condition',None, "A conditional statement that will disable this component if the specified condition evaluates to the 'True' state. If a component is disabled, it will not be installed, regardless of the 'Action' state associated with the component.",),
+    1: ('Component','Attributes','N',None, None, None, None, None, None, 'Remote execution option, one of irsEnum',),
+    1: ('Component','Component','N',None, None, None, None, 'Identifier',None, 'Primary key used to identify a particular component record.',),
+    1: ('Component','ComponentId','Y',None, None, None, None, 'Guid',None, 'A string GUID unique to this component, version, and language.',),
+    1: ('Component','Directory_','N',None, None, 'Directory',1,'Identifier',None, 'Required key of a Directory table record. This is actually a property name whose value contains the actual path, set either by the AppSearch action or with the default setting obtained from the Directory table.',),
+    1: ('Component','KeyPath','Y',None, None, 'File;Registry;ODBCDataSource',1,'Identifier',None, 'Either the primary key into the File table, Registry table, or ODBCDataSource table. This extract path is stored when the component is installed, and is used to detect the presence of the component and to return the path to it.',),
+    1: ('Icon','Name','N',None, None, None, None, 'Identifier',None, 'Primary key. Name of the icon file.',),
+    1: ('Icon','Data','N',None, None, None, None, 'Binary',None, 'Binary stream. The binary icon data in PE (.DLL or .EXE) or icon (.ICO) format.',),
+    1: ('ProgId','Description','Y',None, None, None, None, 'Text',None, 'Localized description for the Program identifier.',),
+    1: ('ProgId','Icon_','Y',None, None, 'Icon',1,'Identifier',None, 'Optional foreign key into the Icon Table, specifying the icon file associated with this ProgId. Will be written under the DefaultIcon key.',),
+    1: ('ProgId','IconIndex','Y',-32767,32767,None, None, None, None, 'Optional icon index.',),
+    1: ('ProgId','ProgId','N',None, None, None, None, 'Text',None, 'The Program Identifier. Primary key.',),
+    1: ('ProgId','Class_','Y',None, None, 'Class',1,'Guid',None, 'The CLSID of an OLE factory corresponding to the ProgId.',),
+    1: ('ProgId','ProgId_Parent','Y',None, None, 'ProgId',1,'Text',None, 'The Parent Program Identifier. If specified, the ProgId column becomes a version independent prog id.',),
+    1: ('ComboBox','Text','Y',None, None, None, None, 'Formatted',None, 'The visible text to be assigned to the item. Optional. If this entry or the entire column is missing, the text is the same as the value.',),
+    1: ('ComboBox','Property','N',None, None, None, None, 'Identifier',None, 'A named property to be tied to this item. All the items tied to the same property become part of the same combobox.',),
+    1: ('ComboBox','Value','N',None, None, None, None, 'Formatted',None, 'The value string associated with this item. Selecting the line will set the associated property to this value.',),
+    1: ('ComboBox','Order','N',1,32767,None, None, None, None, 'A positive integer used to determine the ordering of the items within one list.\tThe integers do not have to be consecutive.',),
+    1: ('CompLocator','Type','Y',0,1,None, None, None, None, 'A boolean value that determines if the registry value is a filename or a directory location.',),
+    1: ('CompLocator','Signature_','N',None, None, None, None, 'Identifier',None, 'The table key. The Signature_ represents a unique file signature and is also the foreign key in the Signature table.',),
+    1: ('CompLocator','ComponentId','N',None, None, None, None, 'Guid',None, 'A string GUID unique to this component, version, and language.',),
+    1: ('Complus','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key referencing Component that controls the ComPlus component.',),
+    1: ('Complus','ExpType','Y',0,32767,None, None, None, None, 'ComPlus component attributes.',),
+    1: ('Directory','Directory','N',None, None, None, None, 'Identifier',None, 'Unique identifier for directory entry, primary key. If a property by this name is defined, it contains the full path to the directory.',),
+    1: ('Directory','DefaultDir','N',None, None, None, None, 'DefaultDir',None, "The default sub-path under parent's path.",),
+    1: ('Directory','Directory_Parent','Y',None, None, 'Directory',1,'Identifier',None, 'Reference to the entry in this table specifying the default parent directory. A record parented to itself or with a Null parent represents a root of the install tree.',),
+    1: ('Control','Type','N',None, None, None, None, 'Identifier',None, 'The type of the control.',),
+    1: ('Control','Y','N',0,32767,None, None, None, None, 'Vertical coordinate of the upper left corner of the bounding rectangle of the control.',),
+    1: ('Control','Text','Y',None, None, None, None, 'Formatted',None, 'A string used to set the initial text contained within a control (if appropriate).',),
+    1: ('Control','Property','Y',None, None, None, None, 'Identifier',None, 'The name of a defined property to be linked to this control. ',),
+    1: ('Control','Attributes','Y',0,2147483647,None, None, None, None, 'A 32-bit word that specifies the attribute flags to be applied to this control.',),
+    1: ('Control','Height','N',0,32767,None, None, None, None, 'Height of the bounding rectangle of the control.',),
+    1: ('Control','Width','N',0,32767,None, None, None, None, 'Width of the bounding rectangle of the control.',),
+    1: ('Control','X','N',0,32767,None, None, None, None, 'Horizontal coordinate of the upper left corner of the bounding rectangle of the control.',),
+    1: ('Control','Control','N',None, None, None, None, 'Identifier',None, 'Name of the control. This name must be unique within a dialog, but can repeat on different dialogs. ',),
+    1: ('Control','Control_Next','Y',None, None, 'Control',2,'Identifier',None, 'The name of an other control on the same dialog. This link defines the tab order of the controls. The links have to form one or more cycles!',),
+    1: ('Control','Dialog_','N',None, None, 'Dialog',1,'Identifier',None, 'External key to the Dialog table, name of the dialog.',),
+    1: ('Control','Help','Y',None, None, None, None, 'Text',None, 'The help strings used with the button. The text is optional. ',),
+    1: ('Dialog','Attributes','Y',0,2147483647,None, None, None, None, 'A 32-bit word that specifies the attribute flags to be applied to this dialog.',),
+    1: ('Dialog','Height','N',0,32767,None, None, None, None, 'Height of the bounding rectangle of the dialog.',),
+    1: ('Dialog','Width','N',0,32767,None, None, None, None, 'Width of the bounding rectangle of the dialog.',),
+    1: ('Dialog','Dialog','N',None, None, None, None, 'Identifier',None, 'Name of the dialog.',),
+    1: ('Dialog','Control_Cancel','Y',None, None, 'Control',2,'Identifier',None, 'Defines the cancel control. Hitting escape or clicking on the close icon on the dialog is equivalent to pushing this button.',),
+    1: ('Dialog','Control_Default','Y',None, None, 'Control',2,'Identifier',None, 'Defines the default control. Hitting return is equivalent to pushing this button.',),
+    1: ('Dialog','Control_First','N',None, None, 'Control',2,'Identifier',None, 'Defines the control that has the focus when the dialog is created.',),
+    1: ('Dialog','HCentering','N',0,100,None, None, None, None, 'Horizontal position of the dialog on a 0-100 scale. 0 means left end, 100 means right end of the screen, 50 center.',),
+    1: ('Dialog','Title','Y',None, None, None, None, 'Formatted',None, "A text string specifying the title to be displayed in the title bar of the dialog's window.",),
+    1: ('Dialog','VCentering','N',0,100,None, None, None, None, 'Vertical position of the dialog on a 0-100 scale. 0 means top end, 100 means bottom end of the screen, 50 center.',),
+    1: ('ControlCondition','Action','N',None, None, None, None, None, 'Default;Disable;Enable;Hide;Show','The desired action to be taken on the specified control.',),
+    1: ('ControlCondition','Condition','N',None, None, None, None, 'Condition',None, 'A standard conditional statement that specifies under which conditions the action should be triggered.',),
+    1: ('ControlCondition','Dialog_','N',None, None, 'Dialog',1,'Identifier',None, 'A foreign key to the Dialog table, name of the dialog.',),
+    1: ('ControlCondition','Control_','N',None, None, 'Control',2,'Identifier',None, 'A foreign key to the Control table, name of the control.',),
+    1: ('ControlEvent','Condition','Y',None, None, None, None, 'Condition',None, 'A standard conditional statement that specifies under which conditions an event should be triggered.',),
+    1: ('ControlEvent','Ordering','Y',0,2147483647,None, None, None, None, 'An integer used to order several events tied to the same control. Can be left blank.',),
+    1: ('ControlEvent','Argument','N',None, None, None, None, 'Formatted',None, 'A value to be used as a modifier when triggering a particular event.',),
+    1: ('ControlEvent','Dialog_','N',None, None, 'Dialog',1,'Identifier',None, 'A foreign key to the Dialog table, name of the dialog.',),
+    1: ('ControlEvent','Control_','N',None, None, 'Control',2,'Identifier',None, 'A foreign key to the Control table, name of the control',),
+    1: ('ControlEvent','Event','N',None, None, None, None, 'Formatted',None, 'An identifier that specifies the type of the event that should take place when the user interacts with control specified by the first two entries.',),
+    1: ('CreateFolder','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into the Component table.',),
+    1: ('CreateFolder','Directory_','N',None, None, 'Directory',1,'Identifier',None, 'Primary key, could be foreign key into the Directory table.',),
+    1: ('CustomAction','Type','N',1,16383,None, None, None, None, 'The numeric custom action type, consisting of source location, code type, entry, option flags.',),
+    1: ('CustomAction','Action','N',None, None, None, None, 'Identifier',None, 'Primary key, name of action, normally appears in sequence table unless private use.',),
+    1: ('CustomAction','Source','Y',None, None, None, None, 'CustomSource',None, 'The table reference of the source of the code.',),
+    1: ('CustomAction','Target','Y',None, None, None, None, 'Formatted',None, 'Execution parameter, depends on the type of custom action',),
+    1: ('DrLocator','Signature_','N',None, None, None, None, 'Identifier',None, 'The Signature_ represents a unique file signature and is also the foreign key in the Signature table.',),
+    1: ('DrLocator','Path','Y',None, None, None, None, 'AnyPath',None, 'The path on the user system. This is either a subpath below the value of the Parent or a full path. The path may contain properties enclosed within [ ] that will be expanded.',),
+    1: ('DrLocator','Depth','Y',0,32767,None, None, None, None, 'The depth below the path to which the Signature_ is recursively searched. If absent, the depth is assumed to be 0.',),
+    1: ('DrLocator','Parent','Y',None, None, None, None, 'Identifier',None, 'The parent file signature. It is also a foreign key in the Signature table. If null and the Path column does not expand to a full path, then all the fixed drives of the user system are searched using the Path.',),
+    1: ('DuplicateFile','File_','N',None, None, 'File',1,'Identifier',None, 'Foreign key referencing the source file to be duplicated.',),
+    1: ('DuplicateFile','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key referencing Component that controls the duplicate file.',),
+    1: ('DuplicateFile','DestFolder','Y',None, None, None, None, 'Identifier',None, 'Name of a property whose value is assumed to resolve to the full pathname to a destination folder.',),
+    1: ('DuplicateFile','DestName','Y',None, None, None, None, 'Filename',None, 'Filename to be given to the duplicate file.',),
+    1: ('DuplicateFile','FileKey','N',None, None, None, None, 'Identifier',None, 'Primary key used to identify a particular file entry',),
+    1: ('Environment','Name','N',None, None, None, None, 'Text',None, 'The name of the environmental value.',),
+    1: ('Environment','Value','Y',None, None, None, None, 'Formatted',None, 'The value to set in the environmental settings.',),
+    1: ('Environment','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into the Component table referencing component that controls the installing of the environmental value.',),
+    1: ('Environment','Environment','N',None, None, None, None, 'Identifier',None, 'Unique identifier for the environmental variable setting',),
+    1: ('Error','Error','N',0,32767,None, None, None, None, 'Integer error number, obtained from header file IError(...) macros.',),
+    1: ('Error','Message','Y',None, None, None, None, 'Template',None, 'Error formatting template, obtained from user ed. or localizers.',),
+    1: ('EventMapping','Dialog_','N',None, None, 'Dialog',1,'Identifier',None, 'A foreign key to the Dialog table, name of the Dialog.',),
+    1: ('EventMapping','Control_','N',None, None, 'Control',2,'Identifier',None, 'A foreign key to the Control table, name of the control.',),
+    1: ('EventMapping','Event','N',None, None, None, None, 'Identifier',None, 'An identifier that specifies the type of the event that the control subscribes to.',),
+    1: ('EventMapping','Attribute','N',None, None, None, None, 'Identifier',None, 'The name of the control attribute, that is set when this event is received.',),
+    1: ('Extension','Feature_','N',None, None, 'Feature',1,'Identifier',None, 'Required foreign key into the Feature Table, specifying the feature to validate or install in order for the CLSID factory to be operational.',),
+    1: ('Extension','Component_','N',None, None, 'Component',1,'Identifier',None, 'Required foreign key into the Component Table, specifying the component for which to return a path when called through LocateComponent.',),
+    1: ('Extension','Extension','N',None, None, None, None, 'Text',None, 'The extension associated with the table row.',),
+    1: ('Extension','MIME_','Y',None, None, 'MIME',1,'Text',None, 'Optional Context identifier, typically "type/format" associated with the extension',),
+    1: ('Extension','ProgId_','Y',None, None, 'ProgId',1,'Text',None, 'Optional ProgId associated with this extension.',),
+    1: ('MIME','CLSID','Y',None, None, None, None, 'Guid',None, 'Optional associated CLSID.',),
+    1: ('MIME','ContentType','N',None, None, None, None, 'Text',None, 'Primary key. Context identifier, typically "type/format".',),
+    1: ('MIME','Extension_','N',None, None, 'Extension',1,'Text',None, 'Optional associated extension (without dot)',),
+    1: ('FeatureComponents','Feature_','N',None, None, 'Feature',1,'Identifier',None, 'Foreign key into Feature table.',),
+    1: ('FeatureComponents','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into Component table.',),
+    1: ('FileSFPCatalog','File_','N',None, None, 'File',1,'Identifier',None, 'File associated with the catalog',),
+    1: ('FileSFPCatalog','SFPCatalog_','N',None, None, 'SFPCatalog',1,'Filename',None, 'Catalog associated with the file',),
+    1: ('SFPCatalog','SFPCatalog','N',None, None, None, None, 'Filename',None, 'File name for the catalog.',),
+    1: ('SFPCatalog','Catalog','N',None, None, None, None, 'Binary',None, 'SFP Catalog',),
+    1: ('SFPCatalog','Dependency','Y',None, None, None, None, 'Formatted',None, 'Parent catalog - only used by SFP',),
+    1: ('Font','File_','N',None, None, 'File',1,'Identifier',None, 'Primary key, foreign key into File table referencing font file.',),
+    1: ('Font','FontTitle','Y',None, None, None, None, 'Text',None, 'Font name.',),
+    1: ('IniFile','Action','N',None, None, None, None, None, '0;1;3','The type of modification to be made, one of iifEnum',),
+    1: ('IniFile','Value','N',None, None, None, None, 'Formatted',None, 'The value to be written.',),
+    1: ('IniFile','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into the Component table referencing component that controls the installing of the .INI value.',),
+    1: ('IniFile','FileName','N',None, None, None, None, 'Filename',None, 'The .INI file name in which to write the information',),
+    1: ('IniFile','IniFile','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized token.',),
+    1: ('IniFile','DirProperty','Y',None, None, None, None, 'Identifier',None, 'Foreign key into the Directory table denoting the directory where the .INI file is.',),
+    1: ('IniFile','Key','N',None, None, None, None, 'Formatted',None, 'The .INI file key below Section.',),
+    1: ('IniFile','Section','N',None, None, None, None, 'Formatted',None, 'The .INI file Section.',),
+    1: ('IniLocator','Type','Y',0,2,None, None, None, None, 'An integer value that determines if the .INI value read is a filename or a directory location or to be used as is w/o interpretation.',),
+    1: ('IniLocator','Signature_','N',None, None, None, None, 'Identifier',None, 'The table key. The Signature_ represents a unique file signature and is also the foreign key in the Signature table.',),
+    1: ('IniLocator','FileName','N',None, None, None, None, 'Filename',None, 'The .INI file name.',),
+    1: ('IniLocator','Key','N',None, None, None, None, 'Text',None, 'Key value (followed by an equals sign in INI file).',),
+    1: ('IniLocator','Section','N',None, None, None, None, 'Text',None, 'Section name within in file (within square brackets in INI file).',),
+    1: ('IniLocator','Field','Y',0,32767,None, None, None, None, 'The field in the .INI line. If Field is null or 0 the entire line is read.',),
+    1: ('InstallExecuteSequence','Action','N',None, None, None, None, 'Identifier',None, 'Name of action to invoke, either in the engine or the handler DLL.',),
+    1: ('InstallExecuteSequence','Condition','Y',None, None, None, None, 'Condition',None, 'Optional expression which skips the action if evaluates to expFalse.If the expression syntax is invalid, the engine will terminate, returning iesBadActionData.',),
+    1: ('InstallExecuteSequence','Sequence','Y',-4,32767,None, None, None, None, 'Number that determines the sort order in which the actions are to be executed.  Leave blank to suppress action.',),
+    1: ('InstallUISequence','Action','N',None, None, None, None, 'Identifier',None, 'Name of action to invoke, either in the engine or the handler DLL.',),
+    1: ('InstallUISequence','Condition','Y',None, None, None, None, 'Condition',None, 'Optional expression which skips the action if evaluates to expFalse.If the expression syntax is invalid, the engine will terminate, returning iesBadActionData.',),
+    1: ('InstallUISequence','Sequence','Y',-4,32767,None, None, None, None, 'Number that determines the sort order in which the actions are to be executed.  Leave blank to suppress action.',),
+    1: ('IsolatedComponent','Component_Application','N',None, None, 'Component',1,'Identifier',None, 'Key to Component table item for application',),
+    1: ('IsolatedComponent','Component_Shared','N',None, None, 'Component',1,'Identifier',None, 'Key to Component table item to be isolated',),
+    1: ('LaunchCondition','Description','N',None, None, None, None, 'Formatted',None, 'Localizable text to display when condition fails and install must abort.',),
+    1: ('LaunchCondition','Condition','N',None, None, None, None, 'Condition',None, 'Expression which must evaluate to TRUE in order for install to commence.',),
+    1: ('ListBox','Text','Y',None, None, None, None, 'Text',None, 'The visible text to be assigned to the item. Optional. If this entry or the entire column is missing, the text is the same as the value.',),
+    1: ('ListBox','Property','N',None, None, None, None, 'Identifier',None, 'A named property to be tied to this item. All the items tied to the same property become part of the same listbox.',),
+    1: ('ListBox','Value','N',None, None, None, None, 'Formatted',None, 'The value string associated with this item. Selecting the line will set the associated property to this value.',),
+    1: ('ListBox','Order','N',1,32767,None, None, None, None, 'A positive integer used to determine the ordering of the items within one list..The integers do not have to be consecutive.',),
+    1: ('ListView','Text','Y',None, None, None, None, 'Text',None, 'The visible text to be assigned to the item. Optional. If this entry or the entire column is missing, the text is the same as the value.',),
+    1: ('ListView','Property','N',None, None, None, None, 'Identifier',None, 'A named property to be tied to this item. All the items tied to the same property become part of the same listview.',),
+    1: ('ListView','Value','N',None, None, None, None, 'Identifier',None, 'The value string associated with this item. Selecting the line will set the associated property to this value.',),
+    1: ('ListView','Order','N',1,32767,None, None, None, None, 'A positive integer used to determine the ordering of the items within one list..The integers do not have to be consecutive.',),
+    1: ('ListView','Binary_','Y',None, None, 'Binary',1,'Identifier',None, 'The name of the icon to be displayed with the icon. The binary information is looked up from the Binary Table.',),
+    1: ('LockPermissions','Table','N',None, None, None, None, 'Identifier','Directory;File;Registry','Reference to another table name',),
+    1: ('LockPermissions','Domain','Y',None, None, None, None, 'Formatted',None, 'Domain name for user whose permissions are being set. (usually a property)',),
+    1: ('LockPermissions','LockObject','N',None, None, None, None, 'Identifier',None, 'Foreign key into Registry or File table',),
+    1: ('LockPermissions','Permission','Y',-2147483647,2147483647,None, None, None, None, 'Permission Access mask.  Full Control = 268435456 (GENERIC_ALL = 0x10000000)',),
+    1: ('LockPermissions','User','N',None, None, None, None, 'Formatted',None, 'User for permissions to be set.  (usually a property)',),
+    1: ('Media','Source','Y',None, None, None, None, 'Property',None, 'The property defining the location of the cabinet file.',),
+    1: ('Media','Cabinet','Y',None, None, None, None, 'Cabinet',None, 'If some or all of the files stored on the media are compressed in a cabinet, the name of that cabinet.',),
+    1: ('Media','DiskId','N',1,32767,None, None, None, None, 'Primary key, integer to determine sort order for table.',),
+    1: ('Media','DiskPrompt','Y',None, None, None, None, 'Text',None, 'Disk name: the visible text actually printed on the disk.  This will be used to prompt the user when this disk needs to be inserted.',),
+    1: ('Media','LastSequence','N',0,32767,None, None, None, None, 'File sequence number for the last file for this media.',),
+    1: ('Media','VolumeLabel','Y',None, None, None, None, 'Text',None, 'The label attributed to the volume.',),
+    1: ('ModuleComponents','Component','N',None, None, 'Component',1,'Identifier',None, 'Component contained in the module.',),
+    1: ('ModuleComponents','Language','N',None, None, 'ModuleSignature',2,None, None, 'Default language ID for module (may be changed by transform).',),
+    1: ('ModuleComponents','ModuleID','N',None, None, 'ModuleSignature',1,'Identifier',None, 'Module containing the component.',),
+    1: ('ModuleSignature','Language','N',None, None, None, None, None, None, 'Default decimal language of module.',),
+    1: ('ModuleSignature','Version','N',None, None, None, None, 'Version',None, 'Version of the module.',),
+    1: ('ModuleSignature','ModuleID','N',None, None, None, None, 'Identifier',None, 'Module identifier (String.GUID).',),
+    1: ('ModuleDependency','ModuleID','N',None, None, 'ModuleSignature',1,'Identifier',None, 'Module requiring the dependency.',),
+    1: ('ModuleDependency','ModuleLanguage','N',None, None, 'ModuleSignature',2,None, None, 'Language of module requiring the dependency.',),
+    1: ('ModuleDependency','RequiredID','N',None, None, None, None, None, None, 'String.GUID of required module.',),
+    1: ('ModuleDependency','RequiredLanguage','N',None, None, None, None, None, None, 'LanguageID of the required module.',),
+    1: ('ModuleDependency','RequiredVersion','Y',None, None, None, None, 'Version',None, 'Version of the required version.',),
+    1: ('ModuleExclusion','ModuleID','N',None, None, 'ModuleSignature',1,'Identifier',None, 'String.GUID of module with exclusion requirement.',),
+    1: ('ModuleExclusion','ModuleLanguage','N',None, None, 'ModuleSignature',2,None, None, 'LanguageID of module with exclusion requirement.',),
+    1: ('ModuleExclusion','ExcludedID','N',None, None, None, None, None, None, 'String.GUID of excluded module.',),
+    1: ('ModuleExclusion','ExcludedLanguage','N',None, None, None, None, None, None, 'Language of excluded module.',),
+    1: ('ModuleExclusion','ExcludedMaxVersion','Y',None, None, None, None, 'Version',None, 'Maximum version of excluded module.',),
+    1: ('ModuleExclusion','ExcludedMinVersion','Y',None, None, None, None, 'Version',None, 'Minimum version of excluded module.',),
+    1: ('MoveFile','Component_','N',None, None, 'Component',1,'Identifier',None, 'If this component is not "selected" for installation or removal, no action will be taken on the associated MoveFile entry',),
+    1: ('MoveFile','DestFolder','N',None, None, None, None, 'Identifier',None, 'Name of a property whose value is assumed to resolve to the full path to the destination directory',),
+    1: ('MoveFile','DestName','Y',None, None, None, None, 'Filename',None, 'Name to be given to the original file after it is moved or copied.  If blank, the destination file will be given the same name as the source file',),
+    1: ('MoveFile','FileKey','N',None, None, None, None, 'Identifier',None, 'Primary key that uniquely identifies a particular MoveFile record',),
+    1: ('MoveFile','Options','N',0,1,None, None, None, None, 'Integer value specifying the MoveFile operating mode, one of imfoEnum',),
+    1: ('MoveFile','SourceFolder','Y',None, None, None, None, 'Identifier',None, 'Name of a property whose value is assumed to resolve to the full path to the source directory',),
+    1: ('MoveFile','SourceName','Y',None, None, None, None, 'Text',None, "Name of the source file(s) to be moved or copied.  Can contain the '*' or '?' wildcards.",),
+    1: ('MsiAssembly','Attributes','Y',None, None, None, None, None, None, 'Assembly attributes',),
+    1: ('MsiAssembly','Feature_','N',None, None, 'Feature',1,'Identifier',None, 'Foreign key into Feature table.',),
+    1: ('MsiAssembly','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into Component table.',),
+    1: ('MsiAssembly','File_Application','Y',None, None, 'File',1,'Identifier',None, 'Foreign key into File table, denoting the application context for private assemblies. Null for global assemblies.',),
+    1: ('MsiAssembly','File_Manifest','Y',None, None, 'File',1,'Identifier',None, 'Foreign key into the File table denoting the manifest file for the assembly.',),
+    1: ('MsiAssemblyName','Name','N',None, None, None, None, 'Text',None, 'The name part of the name-value pairs for the assembly name.',),
+    1: ('MsiAssemblyName','Value','N',None, None, None, None, 'Text',None, 'The value part of the name-value pairs for the assembly name.',),
+    1: ('MsiAssemblyName','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into Component table.',),
+    1: ('MsiDigitalCertificate','CertData','N',None, None, None, None, 'Binary',None, 'A certificate context blob for a signer certificate',),
+    1: ('MsiDigitalCertificate','DigitalCertificate','N',None, None, None, None, 'Identifier',None, 'A unique identifier for the row',),
+    1: ('MsiDigitalSignature','Table','N',None, None, None, None, None, 'Media','Reference to another table name (only Media table is supported)',),
+    1: ('MsiDigitalSignature','DigitalCertificate_','N',None, None, 'MsiDigitalCertificate',1,'Identifier',None, 'Foreign key to MsiDigitalCertificate table identifying the signer certificate',),
+    1: ('MsiDigitalSignature','Hash','Y',None, None, None, None, 'Binary',None, 'The encoded hash blob from the digital signature',),
+    1: ('MsiDigitalSignature','SignObject','N',None, None, None, None, 'Text',None, 'Foreign key to Media table',),
+    1: ('MsiFileHash','File_','N',None, None, 'File',1,'Identifier',None, 'Primary key, foreign key into File table referencing file with this hash',),
+    1: ('MsiFileHash','Options','N',0,32767,None, None, None, None, 'Various options and attributes for this hash.',),
+    1: ('MsiFileHash','HashPart1','N',None, None, None, None, None, None, 'Size of file in bytes (integer).',),
+    1: ('MsiFileHash','HashPart2','N',None, None, None, None, None, None, 'Size of file in bytes (integer).',),
+    1: ('MsiFileHash','HashPart3','N',None, None, None, None, None, None, 'Size of file in bytes (integer).',),
+    1: ('MsiFileHash','HashPart4','N',None, None, None, None, None, None, 'Size of file in bytes (integer).',),
+    1: ('MsiPatchHeaders','StreamRef','N',None, None, None, None, 'Identifier',None, 'Primary key. A unique identifier for the row.',),
+    1: ('MsiPatchHeaders','Header','N',None, None, None, None, 'Binary',None, 'Binary stream. The patch header, used for patch validation.',),
+    1: ('ODBCAttribute','Value','Y',None, None, None, None, 'Text',None, 'Value for ODBC driver attribute',),
+    1: ('ODBCAttribute','Attribute','N',None, None, None, None, 'Text',None, 'Name of ODBC driver attribute',),
+    1: ('ODBCAttribute','Driver_','N',None, None, 'ODBCDriver',1,'Identifier',None, 'Reference to ODBC driver in ODBCDriver table',),
+    1: ('ODBCDriver','Description','N',None, None, None, None, 'Text',None, 'Text used as registered name for driver, non-localized',),
+    1: ('ODBCDriver','File_','N',None, None, 'File',1,'Identifier',None, 'Reference to key driver file',),
+    1: ('ODBCDriver','Component_','N',None, None, 'Component',1,'Identifier',None, 'Reference to associated component',),
+    1: ('ODBCDriver','Driver','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized.internal token for driver',),
+    1: ('ODBCDriver','File_Setup','Y',None, None, 'File',1,'Identifier',None, 'Optional reference to key driver setup DLL',),
+    1: ('ODBCDataSource','Description','N',None, None, None, None, 'Text',None, 'Text used as registered name for data source',),
+    1: ('ODBCDataSource','Component_','N',None, None, 'Component',1,'Identifier',None, 'Reference to associated component',),
+    1: ('ODBCDataSource','DataSource','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized.internal token for data source',),
+    1: ('ODBCDataSource','DriverDescription','N',None, None, None, None, 'Text',None, 'Reference to driver description, may be existing driver',),
+    1: ('ODBCDataSource','Registration','N',0,1,None, None, None, None, 'Registration option: 0=machine, 1=user, others t.b.d.',),
+    1: ('ODBCSourceAttribute','Value','Y',None, None, None, None, 'Text',None, 'Value for ODBC data source attribute',),
+    1: ('ODBCSourceAttribute','Attribute','N',None, None, None, None, 'Text',None, 'Name of ODBC data source attribute',),
+    1: ('ODBCSourceAttribute','DataSource_','N',None, None, 'ODBCDataSource',1,'Identifier',None, 'Reference to ODBC data source in ODBCDataSource table',),
+    1: ('ODBCTranslator','Description','N',None, None, None, None, 'Text',None, 'Text used as registered name for translator',),
+    1: ('ODBCTranslator','File_','N',None, None, 'File',1,'Identifier',None, 'Reference to key translator file',),
+    1: ('ODBCTranslator','Component_','N',None, None, 'Component',1,'Identifier',None, 'Reference to associated component',),
+    1: ('ODBCTranslator','File_Setup','Y',None, None, 'File',1,'Identifier',None, 'Optional reference to key translator setup DLL',),
+    1: ('ODBCTranslator','Translator','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized.internal token for translator',),
+    1: ('Patch','Sequence','N',0,32767,None, None, None, None, 'Primary key, sequence with respect to the media images; order must track cabinet order.',),
+    1: ('Patch','Attributes','N',0,32767,None, None, None, None, 'Integer containing bit flags representing patch attributes',),
+    1: ('Patch','File_','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized token, foreign key to File table, must match identifier in cabinet.',),
+    1: ('Patch','Header','Y',None, None, None, None, 'Binary',None, 'Binary stream. The patch header, used for patch validation.',),
+    1: ('Patch','PatchSize','N',0,2147483647,None, None, None, None, 'Size of patch in bytes (integer).',),
+    1: ('Patch','StreamRef_','Y',None, None, None, None, 'Identifier',None, 'Identifier. Foreign key to the StreamRef column of the MsiPatchHeaders table.',),
+    1: ('PatchPackage','Media_','N',0,32767,None, None, None, None, 'Foreign key to DiskId column of Media table. Indicates the disk containing the patch package.',),
+    1: ('PatchPackage','PatchId','N',None, None, None, None, 'Guid',None, 'A unique string GUID representing this patch.',),
+    1: ('PublishComponent','Feature_','N',None, None, 'Feature',1,'Identifier',None, 'Foreign key into the Feature table.',),
+    1: ('PublishComponent','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into the Component table.',),
+    1: ('PublishComponent','ComponentId','N',None, None, None, None, 'Guid',None, 'A string GUID that represents the component id that will be requested by the alien product.',),
+    1: ('PublishComponent','AppData','Y',None, None, None, None, 'Text',None, 'This is localisable Application specific data that can be associated with a Qualified Component.',),
+    1: ('PublishComponent','Qualifier','N',None, None, None, None, 'Text',None, 'This is defined only when the ComponentId column is an Qualified Component Id. This is the Qualifier for ProvideComponentIndirect.',),
+    1: ('RadioButton','Y','N',0,32767,None, None, None, None, 'The vertical coordinate of the upper left corner of the bounding rectangle of the radio button.',),
+    1: ('RadioButton','Text','Y',None, None, None, None, 'Text',None, 'The visible title to be assigned to the radio button.',),
+    1: ('RadioButton','Property','N',None, None, None, None, 'Identifier',None, 'A named property to be tied to this radio button. All the buttons tied to the same property become part of the same group.',),
+    1: ('RadioButton','Height','N',0,32767,None, None, None, None, 'The height of the button.',),
+    1: ('RadioButton','Width','N',0,32767,None, None, None, None, 'The width of the button.',),
+    1: ('RadioButton','X','N',0,32767,None, None, None, None, 'The horizontal coordinate of the upper left corner of the bounding rectangle of the radio button.',),
+    1: ('RadioButton','Value','N',None, None, None, None, 'Formatted',None, 'The value string associated with this button. Selecting the button will set the associated property to this value.',),
+    1: ('RadioButton','Order','N',1,32767,None, None, None, None, 'A positive integer used to determine the ordering of the items within one list..The integers do not have to be consecutive.',),
+    1: ('RadioButton','Help','Y',None, None, None, None, 'Text',None, 'The help strings used with the button. The text is optional.',),
+    1: ('Registry','Name','Y',None, None, None, None, 'Formatted',None, 'The registry value name.',),
+    1: ('Registry','Value','Y',None, None, None, None, 'Formatted',None, 'The registry value.',),
+    1: ('Registry','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into the Component table referencing component that controls the installing of the registry value.',),
+    1: ('Registry','Key','N',None, None, None, None, 'RegPath',None, 'The key for the registry value.',),
+    1: ('Registry','Registry','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized token.',),
+    1: ('Registry','Root','N',-1,3,None, None, None, None, 'The predefined root key for the registry value, one of rrkEnum.',),
+    1: ('RegLocator','Name','Y',None, None, None, None, 'Formatted',None, 'The registry value name.',),
+    1: ('RegLocator','Type','Y',0,18,None, None, None, None, 'An integer value that determines if the registry value is a filename or a directory location or to be used as is w/o interpretation.',),
+    1: ('RegLocator','Signature_','N',None, None, None, None, 'Identifier',None, 'The table key. The Signature_ represents a unique file signature and is also the foreign key in the Signature table. If the type is 0, the registry values refers a directory, and _Signature is not a foreign key.',),
+    1: ('RegLocator','Key','N',None, None, None, None, 'RegPath',None, 'The key for the registry value.',),
+    1: ('RegLocator','Root','N',0,3,None, None, None, None, 'The predefined root key for the registry value, one of rrkEnum.',),
+    1: ('RemoveFile','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key referencing Component that controls the file to be removed.',),
+    1: ('RemoveFile','FileKey','N',None, None, None, None, 'Identifier',None, 'Primary key used to identify a particular file entry',),
+    1: ('RemoveFile','FileName','Y',None, None, None, None, 'WildCardFilename',None, 'Name of the file to be removed.',),
+    1: ('RemoveFile','DirProperty','N',None, None, None, None, 'Identifier',None, 'Name of a property whose value is assumed to resolve to the full pathname to the folder of the file to be removed.',),
+    1: ('RemoveFile','InstallMode','N',None, None, None, None, None, '1;2;3','Installation option, one of iimEnum.',),
+    1: ('RemoveIniFile','Action','N',None, None, None, None, None, '2;4','The type of modification to be made, one of iifEnum.',),
+    1: ('RemoveIniFile','Value','Y',None, None, None, None, 'Formatted',None, 'The value to be deleted. The value is required when Action is iifIniRemoveTag',),
+    1: ('RemoveIniFile','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into the Component table referencing component that controls the deletion of the .INI value.',),
+    1: ('RemoveIniFile','FileName','N',None, None, None, None, 'Filename',None, 'The .INI file name in which to delete the information',),
+    1: ('RemoveIniFile','DirProperty','Y',None, None, None, None, 'Identifier',None, 'Foreign key into the Directory table denoting the directory where the .INI file is.',),
+    1: ('RemoveIniFile','Key','N',None, None, None, None, 'Formatted',None, 'The .INI file key below Section.',),
+    1: ('RemoveIniFile','Section','N',None, None, None, None, 'Formatted',None, 'The .INI file Section.',),
+    1: ('RemoveIniFile','RemoveIniFile','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized token.',),
+    1: ('RemoveRegistry','Name','Y',None, None, None, None, 'Formatted',None, 'The registry value name.',),
+    1: ('RemoveRegistry','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into the Component table referencing component that controls the deletion of the registry value.',),
+    1: ('RemoveRegistry','Key','N',None, None, None, None, 'RegPath',None, 'The key for the registry value.',),
+    1: ('RemoveRegistry','Root','N',-1,3,None, None, None, None, 'The predefined root key for the registry value, one of rrkEnum',),
+    1: ('RemoveRegistry','RemoveRegistry','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized token.',),
+    1: ('ReserveCost','Component_','N',None, None, 'Component',1,'Identifier',None, 'Reserve a specified amount of space if this component is to be installed.',),
+    1: ('ReserveCost','ReserveFolder','Y',None, None, None, None, 'Identifier',None, 'Name of a property whose value is assumed to resolve to the full path to the destination directory',),
+    1: ('ReserveCost','ReserveKey','N',None, None, None, None, 'Identifier',None, 'Primary key that uniquely identifies a particular ReserveCost record',),
+    1: ('ReserveCost','ReserveLocal','N',0,2147483647,None, None, None, None, 'Disk space to reserve if linked component is installed locally.',),
+    1: ('ReserveCost','ReserveSource','N',0,2147483647,None, None, None, None, 'Disk space to reserve if linked component is installed to run from the source location.',),
+    1: ('SelfReg','File_','N',None, None, 'File',1,'Identifier',None, 'Foreign key into the File table denoting the module that needs to be registered.',),
+    1: ('SelfReg','Cost','Y',0,32767,None, None, None, None, 'The cost of registering the module.',),
+    1: ('ServiceControl','Name','N',None, None, None, None, 'Formatted',None, 'Name of a service. /, \\, comma and space are invalid',),
+    1: ('ServiceControl','Component_','N',None, None, 'Component',1,'Identifier',None, 'Required foreign key into the Component Table that controls the startup of the service',),
+    1: ('ServiceControl','Event','N',0,187,None, None, None, None, 'Bit field:  Install:  0x1 = Start, 0x2 = Stop, 0x8 = Delete, Uninstall: 0x10 = Start, 0x20 = Stop, 0x80 = Delete',),
+    1: ('ServiceControl','ServiceControl','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized token.',),
+    1: ('ServiceControl','Arguments','Y',None, None, None, None, 'Formatted',None, 'Arguments for the service.  Separate by [~].',),
+    1: ('ServiceControl','Wait','Y',0,1,None, None, None, None, 'Boolean for whether to wait for the service to fully start',),
+    1: ('ServiceInstall','Name','N',None, None, None, None, 'Formatted',None, 'Internal Name of the Service',),
+    1: ('ServiceInstall','Description','Y',None, None, None, None, 'Text',None, 'Description of service.',),
+    1: ('ServiceInstall','Component_','N',None, None, 'Component',1,'Identifier',None, 'Required foreign key into the Component Table that controls the startup of the service',),
+    1: ('ServiceInstall','Arguments','Y',None, None, None, None, 'Formatted',None, 'Arguments to include in every start of the service, passed to WinMain',),
+    1: ('ServiceInstall','ServiceInstall','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized token.',),
+    1: ('ServiceInstall','Dependencies','Y',None, None, None, None, 'Formatted',None, 'Other services this depends on to start.  Separate by [~], and end with [~][~]',),
+    1: ('ServiceInstall','DisplayName','Y',None, None, None, None, 'Formatted',None, 'External Name of the Service',),
+    1: ('ServiceInstall','ErrorControl','N',-2147483647,2147483647,None, None, None, None, 'Severity of error if service fails to start',),
+    1: ('ServiceInstall','LoadOrderGroup','Y',None, None, None, None, 'Formatted',None, 'LoadOrderGroup',),
+    1: ('ServiceInstall','Password','Y',None, None, None, None, 'Formatted',None, 'password to run service with.  (with StartName)',),
+    1: ('ServiceInstall','ServiceType','N',-2147483647,2147483647,None, None, None, None, 'Type of the service',),
+    1: ('ServiceInstall','StartName','Y',None, None, None, None, 'Formatted',None, 'User or object name to run service as',),
+    1: ('ServiceInstall','StartType','N',0,4,None, None, None, None, 'Type of the service',),
+    1: ('Shortcut','Name','N',None, None, None, None, 'Filename',None, 'The name of the shortcut to be created.',),
+    1: ('Shortcut','Description','Y',None, None, None, None, 'Text',None, 'The description for the shortcut.',),
+    1: ('Shortcut','Component_','N',None, None, 'Component',1,'Identifier',None, 'Foreign key into the Component table denoting the component whose selection gates the shortcut creation/deletion.',),
+    1: ('Shortcut','Icon_','Y',None, None, 'Icon',1,'Identifier',None, 'Foreign key into the File table denoting the external icon file for the shortcut.',),
+    1: ('Shortcut','IconIndex','Y',-32767,32767,None, None, None, None, 'The icon index for the shortcut.',),
+    1: ('Shortcut','Directory_','N',None, None, 'Directory',1,'Identifier',None, 'Foreign key into the Directory table denoting the directory where the shortcut file is created.',),
+    1: ('Shortcut','Target','N',None, None, None, None, 'Shortcut',None, 'The shortcut target. This is usually a property that is expanded to a file or a folder that the shortcut points to.',),
+    1: ('Shortcut','Arguments','Y',None, None, None, None, 'Formatted',None, 'The command-line arguments for the shortcut.',),
+    1: ('Shortcut','Shortcut','N',None, None, None, None, 'Identifier',None, 'Primary key, non-localized token.',),
+    1: ('Shortcut','Hotkey','Y',0,32767,None, None, None, None, 'The hotkey for the shortcut. It has the virtual-key code for the key in the low-order byte, and the modifier flags in the high-order byte. ',),
+    1: ('Shortcut','ShowCmd','Y',None, None, None, None, None, '1;3;7','The show command for the application window.The following values may be used.',),
+    1: ('Shortcut','WkDir','Y',None, None, None, None, 'Identifier',None, 'Name of property defining location of working directory.',),
+    1: ('Signature','FileName','N',None, None, None, None, 'Filename',None, 'The name of the file. This may contain a "short name|long name" pair.',),
+    1: ('Signature','Signature','N',None, None, None, None, 'Identifier',None, 'The table key. The Signature represents a unique file signature.',),
+    1: ('Signature','Languages','Y',None, None, None, None, 'Language',None, 'The languages supported by the file.',),
+    1: ('Signature','MaxDate','Y',0,2147483647,None, None, None, None, 'The maximum creation date of the file.',),
+    1: ('Signature','MaxSize','Y',0,2147483647,None, None, None, None, 'The maximum size of the file. ',),
+    1: ('Signature','MaxVersion','Y',None, None, None, None, 'Text',None, 'The maximum version of the file.',),
+    1: ('Signature','MinDate','Y',0,2147483647,None, None, None, None, 'The minimum creation date of the file.',),
+    1: ('Signature','MinSize','Y',0,2147483647,None, None, None, None, 'The minimum size of the file.',),
+    1: ('Signature','MinVersion','Y',None, None, None, None, 'Text',None, 'The minimum version of the file.',),
+    1: ('TextStyle','TextStyle','N',None, None, None, None, 'Identifier',None, 'Name of the style. The primary key of this table. This name is embedded in the texts to indicate a style change.',),
+    1: ('TextStyle','Color','Y',0,16777215,None, None, None, None, 'An integer indicating the color of the string in the RGB format (Red, Green, Blue each 0-255, RGB = R + 256*G + 256^2*B).',),
+    1: ('TextStyle','FaceName','N',None, None, None, None, 'Text',None, 'A string indicating the name of the font used. Required. The string must be at most 31 characters long.',),
+    1: ('TextStyle','Size','N',0,32767,None, None, None, None, 'The size of the font used. This size is given in our units (1/12 of the system font height). Assuming that the system font is set to 12 point size, this is equivalent to the point size.',),
+    1: ('TextStyle','StyleBits','Y',0,15,None, None, None, None, 'A combination of style bits.',),
+    1: ('TypeLib','Description','Y',None, None, None, None, 'Text',None, None, ),
+    1: ('TypeLib','Feature_','N',None, None, 'Feature',1,'Identifier',None, 'Required foreign key into the Feature Table, specifying the feature to validate or install in order for the type library to be operational.',),
+    1: ('TypeLib','Component_','N',None, None, 'Component',1,'Identifier',None, 'Required foreign key into the Component Table, specifying the component for which to return a path when called through LocateComponent.',),
+    1: ('TypeLib','Directory_','Y',None, None, 'Directory',1,'Identifier',None, 'Optional. The foreign key into the Directory table denoting the path to the help file for the type library.',),
+    1: ('TypeLib','Language','N',0,32767,None, None, None, None, 'The language of the library.',),
+    1: ('TypeLib','Version','Y',0,16777215,None, None, None, None, 'The version of the library. The minor version is in the lower 8 bits of the integer. The major version is in the next 16 bits. ',),
+    1: ('TypeLib','Cost','Y',0,2147483647,None, None, None, None, 'The cost associated with the registration of the typelib. This column is currently optional.',),
+    1: ('TypeLib','LibID','N',None, None, None, None, 'Guid',None, 'The GUID that represents the library.',),
+    1: ('UIText','Text','Y',None, None, None, None, 'Text',None, 'The localized version of the string.',),
+    1: ('UIText','Key','N',None, None, None, None, 'Identifier',None, 'A unique key that identifies the particular string.',),
+    1: ('Upgrade','Attributes','N',0,2147483647,None, None, None, None, 'The attributes of this product set.',),
+    1: ('Upgrade','Language','Y',None, None, None, None, 'Language',None, 'A comma-separated list of languages for either products in this set or products not in this set.',),
+    1: ('Upgrade','ActionProperty','N',None, None, None, None, 'UpperCase',None, 'The property to set when a product in this set is found.',),
+    1: ('Upgrade','Remove','Y',None, None, None, None, 'Formatted',None, 'The list of features to remove when uninstalling a product from this set.  The default is "ALL".',),
+    1: ('Upgrade','UpgradeCode','N',None, None, None, None, 'Guid',None, 'The UpgradeCode GUID belonging to the products in this set.',),
+    1: ('Upgrade','VersionMax','Y',None, None, None, None, 'Text',None, 'The maximum ProductVersion of the products in this set.  The set may or may not include products with this particular version.',),
+    1: ('Upgrade','VersionMin','Y',None, None, None, None, 'Text',None, 'The minimum ProductVersion of the products in this set.  The set may or may not include products with this particular version.',),
+    1: ('Verb','Sequence','Y',0,32767,None, None, None, None, 'Order within the verbs for a particular extension. Also used simply to specify the default verb.',),
+    1: ('Verb','Argument','Y',None, None, None, None, 'Formatted',None, 'Optional value for the command arguments.',),
+    1: ('Verb','Extension_','N',None, None, 'Extension',1,'Text',None, 'The extension associated with the table row.',),
+    1: ('Verb','Verb','N',None, None, None, None, 'Text',None, 'The verb for the command.',),
+    1: ('Verb','Command','Y',None, None, None, None, 'Formatted',None, 'The command text.',),
+       ]

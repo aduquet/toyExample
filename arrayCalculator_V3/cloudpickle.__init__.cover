@@ -1,0 +1,7 @@
+    1: from __future__ import absolute_import
+       
+       
+    1: from cloudpickle.cloudpickle import *  # noqa
+    1: from cloudpickle.cloudpickle_fast import CloudPickler, dumps, dump  # noqa
+       
+    1: __version__ = '1.5.0'

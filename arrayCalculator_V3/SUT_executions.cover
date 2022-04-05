@@ -1,0 +1,65 @@
+    1: import os
+    1: import sys
+    1: import pathlib
+    1: import unittest
+    1: import pandas as pd
+    1: import warnings
+       
+    1: from traceGenerator import getState
+    1: from arrayCalculator import *
+       
+    1: warnings.filterwarnings('ignore')
+    1: sys.path.append("C://Users//duquet//Documents//GitHub//toyExample//")
+       
+    1: ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+       
+    1: from arrayCalculator import *
+       
+    1: def saveState( df_main, tID, insID):
+           
+  180:     df_main['inputID'] = tID
+  180:     df_main['input'] = [insID]
+  180:     here_iam = str(pathlib.Path().absolute())
+  180:     resultsPath = here_iam + '\\adapter2.csv'
+               
+  180:     if not os.path.exists(resultsPath):    
+                with open('adapter2.csv', 'a', newline = '') as f:
+                   df_main = df_main.sort_values(by=['inputID'], ascending=True)
+                   df_main.to_csv(f, index = False, header = True)
+                   print('*****************')
+       
+           else:
+  180:         with open('adapter2.csv', 'a', newline = '') as f:
+  180:             df_main = df_main.sort_values(by=['inputID'], ascending=True)
+  180:             df_main.to_csv(f, index = False, header = False)
+       
+       
+    1: def readInputs():
+           
+    1:     file1 = open( ROOT_DIR + '//FuzzerInputs//inputsArray_B.txt', 'r')
+    1:     df = pd.DataFrame()
+       
+    1:     Lines = file1.readlines()
+    1:     count = 0
+           # Strips the newline character
+  181:     for line in Lines:
+  180:         if line.find('\n') != -1:
+  179:             line = line.replace('\n', '')
+  180:         aux = []
+ 2051:         for i in line:
+ 1871:             aux.append(int(i))
+  180:         dict = {'inputID': count, 'input': aux}
+  180:         df = df.append(dict, ignore_index = True)
+  180:         count += 1
+               #print("Line{}: {}".format(count, line.strip()))
+    1:     return df
+       
+    1: inputs = readInputs()
+  181: for index, row in inputs.iterrows():
+  180:     input = list(row['input'])
+  180:     a = ArrayCalculator()
+        
+  180:     a.setter(input)
+  180:     df_main = getState(a, index)
+           #print(df_main)
+  180:     saveState(df_main, row['inputID'], input)

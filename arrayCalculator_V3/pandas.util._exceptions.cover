@@ -1,0 +1,45 @@
+    1: from __future__ import annotations
+       
+    1: import contextlib
+    1: import inspect
+    1: import os
+       
+       
+    1: @contextlib.contextmanager
+    1: def rewrite_exception(old_name: str, new_name: str):
+           """
+           Rewrite the message of an exception.
+           """
+           try:
+               yield
+           except Exception as err:
+               if not err.args:
+                   raise
+               msg = str(err.args[0])
+               msg = msg.replace(old_name, new_name)
+               args: tuple[str, ...] = (msg,)
+               if len(err.args) > 1:
+                   args = args + err.args[1:]
+               err.args = args
+               raise
+       
+       
+    1: def find_stack_level() -> int:
+           """
+           Find the first place in the stack that is not inside pandas
+           (tests notwithstanding).
+           """
+  360:     stack = inspect.stack()
+       
+  360:     import pandas as pd
+       
+  360:     pkg_dir = os.path.dirname(pd.__file__)
+  360:     test_dir = os.path.join(pkg_dir, "tests")
+       
+ 1080:     for n in range(len(stack)):
+ 1080:         fname = stack[n].filename
+ 1080:         if fname.startswith(pkg_dir) and not fname.startswith(test_dir):
+  720:             continue
+               else:
+  360:             break
+  360:     return n

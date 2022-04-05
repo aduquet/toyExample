@@ -1,0 +1,9 @@
+    1: import myfunctions
+       
+    1: def main():
+    1:    x = 5
+    1:    print ('area=',myfunctions.area(x))
+    1:    print ('factorial=',myfunctions.factorial(x))
+       
+    1: if __name__=='__main__':
+    1:    main()

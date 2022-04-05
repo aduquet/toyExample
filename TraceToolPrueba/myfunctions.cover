@@ -1,0 +1,11 @@
+    1: import math
+       
+    1: def area(x):
+    1:    a = math.pi*math.pow(x,2)
+    1:    return a
+       
+    1: def factorial(x):
+    5:    if x==1:
+    1:       return 1
+          else:
+    4:        return x*factorial(x-1)
